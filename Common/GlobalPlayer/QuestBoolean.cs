@@ -1,8 +1,6 @@
-﻿using Synergia.Content.Quests;
-using Synergia.Helpers;
+﻿using Synergia.Helpers;
 using Terraria;
 using Terraria.ModLoader.IO;
-using static Terraria.ModLoader.BackupIO;
 
 namespace Synergia.Common {
     public partial class QuestSystem {

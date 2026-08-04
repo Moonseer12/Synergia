@@ -1,7 +1,5 @@
 ﻿using Avalon.Items.Material.Bars;
 using Avalon.Items.Material.Shards;
-using Avalon.Items.Placeable.Painting;
-using Avalon.Items.Weapons.Melee.Hardmode.FeroziumIceSword;
 using Bismuth.Content.Items.Placeable;
 using Consolaria.Content.Items.Materials;
 using NewHorizons.Content.Items.Accessories;
@@ -18,13 +16,11 @@ using NewHorizons.Content.Items.Materials;
 using Synergia.Content.Items.Misc;
 using Terraria;
 using Terraria.ID;
-using ValhallaMod.Items.Weapons.Melee.Swords;
 
 namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.HorizonsChanges
 {
     public class HorizonsArmor : BaseRecipe
     {
-        //MAKE RECIPE FOR THESE
         public override void DisableRecipe(Recipe recipe)
         {
             DisableRecipe(recipe, ItemType<NightMagePants>());
@@ -40,12 +36,12 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.HorizonsChanges
 
         public override void Ingredient(Recipe recipe)
         {
-            AddLotIngredient(recipe, ItemType<AshenBreastplate>(), (ModContent.ItemType<FireShard>(), 6));
-            AddLotIngredient(recipe, ItemType<AshenLeggins>(), (ModContent.ItemType<FireShard>(), 4));
-            AddLotIngredient(recipe, ItemType<AshenShroud>(), (ModContent.ItemType<FireShard>(), 4));
-            AddLotIngredient(recipe, ItemType<PyroChest>(), (ModContent.ItemType<FireShard>(), 6));
-            AddLotIngredient(recipe, ItemType<PyroHat>(), (ModContent.ItemType<FireShard>(), 4));
-            AddLotIngredient(recipe, ItemType<PyroLegwear>(), (ModContent.ItemType<FireShard>(), 4));
+            AddLotIngredient(recipe, ItemType<AshenBreastplate>(), (ItemType<FireShard>(), 6));
+            AddLotIngredient(recipe, ItemType<AshenLeggins>(), (ItemType<FireShard>(), 4));
+            AddLotIngredient(recipe, ItemType<AshenShroud>(), (ItemType<FireShard>(), 4));
+            AddLotIngredient(recipe, ItemType<PyroChest>(), (ItemType<FireShard>(), 6));
+            AddLotIngredient(recipe, ItemType<PyroHat>(), (ItemType<FireShard>(), 4));
+            AddLotIngredient(recipe, ItemType<PyroLegwear>(), (ItemType<FireShard>(), 4));
             AddIngredient(recipe, ItemType<SkyHood>(), 2, new Item(ItemType<WhiteThread>(), 6));
             AddIngredient(recipe, ItemType<SkyCape>(), 2, new Item(ItemType<WhiteThread>(), 12));
             AddIngredient(recipe, ItemType<SkyPants>(), 2, new Item(ItemType<WhiteThread>(), 8));

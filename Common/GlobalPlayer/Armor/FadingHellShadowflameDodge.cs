@@ -2,16 +2,8 @@
 using Synergia.Common.ModSystems.Netcode;
 using Synergia.Common.ModSystems.Netcode.Packets;
 using Synergia.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.GameContent;
-using Terraria.Graphics;
+using Terraria.Graphics.Renderers;
 using Terraria.ID;
 
 namespace Synergia.Common.GlobalPlayer.Armor
@@ -50,7 +42,8 @@ namespace Synergia.Common.GlobalPlayer.Armor
             for(int i = 0; i < 30; i++)
             {
                 velocity = Vector2.UnitX.RotatedBy(MathHelper.ToRadians(i * 12)) * 8f;
-                ParticleSystem.AddParticle(new ShadowflameParticle(), Player.Center, velocity, Color.Black, 1f);
+                Main.ParticleSystem_World_OverPlayers.Add(
+                    new ShadowflameParticle(velocity, Player.Center, 1f));
             }
         }
         public override bool FreeDodge(Player.HurtInfo info)
@@ -130,12 +123,10 @@ namespace Synergia.Common.GlobalPlayer.Armor
             }
 
             if(Projectile.timeLeft % 5 == 0)
-                ParticleSystem.AddParticle(
-                    new ShadowflameParticle(),
+                Main.ParticleSystem_World_OverPlayers.Add(
+                    new ShadowflameParticle(Main.rand.NextVector2Unit() * 2f,
                     Projectile.Center + new Vector2(0f, DustOffsetY[(int)ArmorType]).RotatedBy(Projectile.rotation),
-                    Main.rand.NextVector2Unit() * 2f,
-                    Color.Black,
-                    Main.rand.NextFloat(0.8f, 1.2f)
+                    Main.rand.NextFloat(0.8f, 1.2f))
                 );
             float progress = 1f - Projectile.timeLeft / 20f / ExtraUpdates;
             Projectile.Center = Vector2.Lerp(new Vector2(X, Y), player.Center, EaseFunctions.EaseInCubic(progress));
@@ -157,7 +148,7 @@ namespace Synergia.Common.GlobalPlayer.Armor
             int frameHeight = texture.Height / 20;
             if (ArmorType == 1)
                 frameHeight = texture.Height;
-            Rectangle frame = new Rectangle(0, 0, texture.Width, frameHeight);
+            Rectangle frame = new(0, 0, texture.Width, frameHeight);
             Vector2 origin = frame.Size() / 2f;
             Color color = Color.Lerp(lightColor, Color.Black, 1f - Projectile.Opacity);
             Main.EntitySpriteDraw(
@@ -174,20 +165,30 @@ namespace Synergia.Common.GlobalPlayer.Armor
             return false;
         }
     }
-    public class ShadowflameParticle : Particle
+    public class ShadowflameParticle : BaseParticle
     {
         internal const int MaxLifetime = 20;
         internal const float Size = 0.1f;
-        public override void Update()
+		float ai1;
+		Vector2 Velocity;
+
+		public ShadowflameParticle(Vector2 velocity, Vector2 position, float ai1)
+		{
+			Velocity = velocity;
+			Position = position;
+			this.ai1 = ai1;
+		}
+
+        public override void Update(ref ParticleRendererSettings settings)
         {
-            TimeInWorld++;
+			base.Update(ref settings);
             if (TimeInWorld > MaxLifetime)
                 Active = false;
 
             Position += Velocity;
             Velocity *= 0.99f;
         }
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(ref ParticleRendererSettings settings, SpriteBatch spriteBatch)
         {
             Texture2D texture2D = (Texture2D)ModContent.Request<Texture2D>("Synergia/Assets/Textures/Glow");
             Rectangle rectangle = texture2D.Frame();

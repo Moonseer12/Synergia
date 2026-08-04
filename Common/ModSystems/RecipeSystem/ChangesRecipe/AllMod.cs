@@ -1,29 +1,17 @@
 ﻿using System.Collections.Generic;
-using Avalon.Items.Armor.Hardmode;
-using Avalon.Items.Armor.PreHardmode;
-using Avalon.Items.Material;
 using Avalon.Items.Material.Bars;
 using Avalon.Items.Material.Herbs;
 using Avalon.Items.Material.Shards;
 using Avalon.Items.Placeable.Tile;
-using Avalon.Items.Weapons.Melee.Hardmode.MasterSword;
-using Avalon.Items.Weapons.Melee.Hardmode.QuantumClaymore;
-using Avalon.Items.Weapons.Melee.Hardmode.TrueAeonsEternity;
+using Avalon.Items.Weapons.Melee.Swords;
 using Bismuth.Content.Items.Materials;
 using Bismuth.Content.Items.Other;
-using Bismuth.Content.Items.Placeable;
 using Bismuth.Content.Items.Weapons.Melee;
 using Consolaria.Content.Items.Materials;
 using Consolaria.Content.Items.Summons;
 using Consolaria.Content.Items.Weapons.Melee;
 using Consolaria.Content.Items.Weapons.Ranged;
 using Consolaria.Content.Items.Weapons.Throwing;
-using NewHorizons.Content.Items.Armor.BeastArmor;
-using NewHorizons.Content.Items.Armor.NanotechArmor;
-using NewHorizons.Content.Items.Armor.NightMageArmor;
-using NewHorizons.Content.Items.Armor.RottenArmor;
-using NewHorizons.Content.Items.Armor.WyvernHunterArmor;
-using NewHorizons.Content.Items.Materials;
 using Synergia.Content.Items.Accessories;
 using Synergia.Content.Items.Consumables;
 using Synergia.Content.Items.Weapons.AuraStaff;
@@ -37,7 +25,6 @@ using ValhallaMod.Items.Weapons.Melee.Spears;
 using ValhallaMod.Items.Weapons.Melee.Swords;
 using ValhallaMod.Items.Weapons.Ranged.Bows;
 using ValhallaMod.Items.Weapons.Ranged.Bows.Wood;
-using ValhallaMod.Items.Weapons.Summon.Auras;
 using ValhallaMod.Items.Weapons.Summon.Whips;
 
 namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe {
@@ -48,19 +35,19 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe {
             DisableRecipe(recipe, ItemID.PumpkinMoonMedallion);
         }
         public override void Ingredient(Recipe recipe) {
-            AddLotIngredient(recipe, ItemID.VenomBullet, (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemID.VenomArrow, (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemID.FlaskofVenom, (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<VenomSpike>(), (ModContent.ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemID.VenomBullet, (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemID.VenomArrow, (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemID.FlaskofVenom, (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemType<VenomSpike>(), (ItemType<VenomShard>(), 1));
             AddIngredient(recipe, ItemType<WhiteThread>(), 0, new Item(ItemID.Cobweb, 2));
             AddIngredient(recipe, ModList.StarforgedClassic.Find<ModItem>("StarForgeItem").Type, 0, new Item(ItemID.MeteoriteBar, 10));
             AddIngredient(recipe, ItemType<SuspiciousLookingSkull>(), 0, new Item(ItemID.LunarTabletFragment, 5));
-            AddLotIngredient(recipe, ItemID.Zenith, (ModContent.ItemType<SolarWind>(), 1));
-            AddLotIngredient(recipe, ItemID.Zenith, (ModContent.ItemType<QuantumClaymore>(), 1));
-            AddLotIngredient(recipe, ItemID.Zenith, (ModContent.ItemType<TrueAeonsEternity>(), 1));
-            AddLotIngredient(recipe, ItemID.Zenith, (ModContent.ItemType<Radiance>(), 1));
-            AddLotIngredient(recipe, ItemID.Zenith, (ModContent.ItemType<BladeEvil>(), 1));
-            AddIngredient(recipe, ItemType<Tonbogiri>(), 0, new Item(ModContent.ItemType<TerraSpear>(), 1));
+            AddLotIngredient(recipe, ItemID.Zenith, (ItemType<SolarWind>(), 1));
+            AddLotIngredient(recipe, ItemID.Zenith, (ItemType<QuantumClaymore>(), 1));
+            AddLotIngredient(recipe, ItemID.Zenith, (ItemType<TrueAeonsEternity>(), 1));
+            AddLotIngredient(recipe, ItemID.Zenith, (ItemType<Radiance>(), 1));
+            AddLotIngredient(recipe, ItemID.Zenith, (ItemType<BladeEvil>(), 1));
+            AddIngredient(recipe, ItemType<Tonbogiri>(), 0, new Item(ItemType<TerraSpear>(), 1));
         }
         public override void PostPostRecipe(Recipe recipe) {
             List<int> potion = [ItemID.ThornsPotion];
@@ -86,7 +73,7 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe {
         }
         static void CreateDwarvenCoin()
         {
-            Recipe recipe = Recipe.Create(ModContent.ItemType<DwarvenCoin>());
+            Recipe recipe = Recipe.Create(ItemType<DwarvenCoin>());
             recipe.AddIngredient(ItemID.GoldCoin, 50);
             recipe.AddIngredient(ItemID.GoldBar, 10);
             recipe.AddTile(TileID.Hellforge);

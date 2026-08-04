@@ -1,5 +1,3 @@
-using Avalon.Items.Weapons.Ranged.PreHardmode.Blunderblight;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using ValhallaMod.Items.Material.Bar;
@@ -22,7 +20,7 @@ public class ThunderLegs : ModItem {
     public override void AddRecipes()
     {
         CreateRecipe()
-            .AddIngredient(ModContent.ItemType<ThunderBar>(), 18)
+            .AddIngredient(ItemType<ThunderBar>(), 18)
             .AddTile(TileID.MythrilAnvil)
             .Register();
     }

@@ -3,7 +3,6 @@ using Synergia.Common.GlobalPlayer;
 using System;
 using Terraria;
 using Terraria.DataStructures;
-using TRAEProject.NewContent.Items.DreadItems.BloodBoiler;
 
 namespace Synergia.Common.PlayerLayers {
     public class UIPlayerLayer : PlayerDrawLayer {

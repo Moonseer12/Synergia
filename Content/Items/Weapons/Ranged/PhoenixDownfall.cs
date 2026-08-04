@@ -38,14 +38,7 @@ namespace Synergia.Content.Items.Weapons.Ranged
             Item.UseSound = SoundID.Item11;
             Item.useAmmo = AmmoID.Bullet;
         }
-         public override void UseStyle(Player player, Rectangle heldItemFrame)
-        {
-            if (ModContent.GetInstance<AvalonClientConfig>().AdditionalScreenshakes)
-            {
-                UseStyles.gunStyle(player, 0, 2);
-            }
-        }
-
+        
         public override Vector2? HoldoutOffset()
         {
             return new Vector2(-6f, 0f);

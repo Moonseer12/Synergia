@@ -1,9 +1,5 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 
@@ -176,7 +172,7 @@ namespace Synergia.Content.Projectiles.Other
             float alpha = 1f - Projectile.alpha / 255f;
             Vector2 drawPos = Projectile.Center - Main.screenPosition;
 
-            Color outlineColor = new Color(180, 25, 25, (int)(55 * alpha));
+            Color outlineColor = new(180, 25, 25, (int)(55 * alpha));
 
             for (int i = 0; i < 4; i++)
             {
@@ -198,7 +194,7 @@ namespace Synergia.Content.Projectiles.Other
             return false;
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             for (int i = 0; i < 18; i++)
             {

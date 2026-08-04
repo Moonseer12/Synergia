@@ -15,7 +15,7 @@ namespace Synergia.Content.Projectiles.Reworks
 {
     public class FeroziumBladeRework : MaceTemplate
     {
-        public override string Texture => "Avalon/Items/Weapons/Melee/Hardmode/FeroziumIceSword/FeroziumIceSword";
+        public override string Texture => "Avalon/Items/Weapons/Melee/Swords/FeroziumIceSword";
         public override string TrailTexture => "Synergia/Content/Projectiles/Reworks/FeroziumBladeRework_Trail";
 
         private const string GlowTexturePath = "Synergia/Assets/Textures/LightTrail_1";

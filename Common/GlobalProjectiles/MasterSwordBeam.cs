@@ -1,7 +1,5 @@
-using Avalon.Items.Weapons.Melee.Hardmode.MasterSword;
-using Microsoft.Xna.Framework;
+using Avalon.Projectiles.Melee.Swords;
 using Terraria;
-using Terraria.ModLoader;
 
 namespace Synergia.Common.GlobalProjectiles
 {

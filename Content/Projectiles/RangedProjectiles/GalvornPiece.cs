@@ -1,15 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
+﻿using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace Synergia.Content.Projectiles.RangedProjectiles
 {
     public class GalvornPiece : ModProjectile
     {
-        private int fadeOutDuration = 20;
+        public int fadeOutDuration = 20;
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +43,7 @@ namespace Synergia.Content.Projectiles.RangedProjectiles
             }
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 

@@ -1,20 +1,13 @@
-﻿
-using Avalon.Items.Accessories.Hardmode;
-using Avalon.Items.Material;
+﻿using Avalon.Items.Material;
 using Avalon.Items.Material.Bars;
 using Avalon.Items.Material.Ores;
 using Avalon.Items.Material.Shards;
-using Avalon.Items.Tomes.Hardmode;
-using Avalon.Items.Tomes.PreHardmode;
-using Avalon.Items.Tools.Hardmode;
-using Avalon.Items.Weapons.Magic.Hardmode.EnergyRevolver;
-using Avalon.Items.Weapons.Magic.Hardmode.MagicGrenade;
-using Avalon.Items.Weapons.Melee.Hardmode.DarklightLance;
-using Avalon.Items.Weapons.Melee.PreHardmode.MarrowMasher;
-using Avalon.Items.Weapons.Melee.PreHardmode.UrchinMace;
-using Avalon.Items.Weapons.Ranged.PreHardmode.Icicle;
-using Avalon.Items.Weapons.Ranged.PreHardmode.Thompson;
-using Avalon.Prefixes;
+using Avalon.Items.Weapons.Magic.Guns;
+using Avalon.Items.Weapons.Magic.Other;
+using Avalon.Items.Weapons.Melee.Maces;
+using Avalon.Items.Weapons.Melee.Spears;
+using Avalon.Items.Weapons.Ranged.Bows;
+using Avalon.Items.Weapons.Ranged.Thrown;
 using Bismuth.Content.Items.Materials;
 using Bismuth.Content.Items.Placeable;
 using Bismuth.Content.Items.Weapons.Magical;
@@ -23,7 +16,6 @@ using Consolaria.Content.Items.Weapons.Ranged;
 using NewHorizons.Content.Items.Materials;
 using NewHorizons.Content.Items.Weapons.Magic;
 using NewHorizons.Content.Items.Weapons.Throwing;
-using starforgedclassic;
 using starforgedclassic.Content.Weapons.PlumeShot;
 using Synergia.Content.Items.Materials;
 using Synergia.Content.Items.Misc;
@@ -51,14 +43,12 @@ using ValhallaMod.Items.Weapons.Melee.Spears;
 using ValhallaMod.Items.Weapons.Melee.Swords;
 using ValhallaMod.Items.Weapons.Ranged.Bows;
 using ValhallaMod.Items.Weapons.Ranged.DartGuns;
-using ValhallaMod.Items.Weapons.Ranged.Darts;
 using ValhallaMod.Items.Weapons.Ranged.Guns;
 using ValhallaMod.Items.Weapons.Ranged.Javelins;
 using ValhallaMod.Items.Weapons.Ranged.RocketLaunchers;
 using ValhallaMod.Items.Weapons.Ranged.Thrown;
 using ValhallaMod.Items.Weapons.Summon.Auras;
 using ValhallaMod.Items.Weapons.Summon.Whips;
-using static Synergia.ModList;
 using static Terraria.ModLoader.ModContent;
 
 namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
@@ -75,31 +65,30 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
             DisableRecipe(recipe, ItemType<CarrotDagger>());
         }
         public override void Ingredient(Recipe recipe) {
-            AddLotIngredient(recipe, ItemType<BlueSlice>(), (ModContent.ItemType<FrigidShard>(), 3));
+            AddLotIngredient(recipe, ItemType<BlueSlice>(), (ItemType<FrigidShard>(), 3));
             AddIngredient(recipe, ItemType<StarAuraStaff>(), 0, new Item(ModList.StarforgedClassic.Find<ModItem>("AzuriteBarItem").Type)); 
             AddIngredient(recipe, ItemType<SpiderEgg>(), 1, new Item(ItemID.Grenade, 33));
-            AddIngredient(recipe, ItemType<Scarabine>(), 0, new Item(ModContent.ItemType<Thompson>(), 1));
-            AddIngredient(recipe, ItemType<Forfeiter>(), 0, new Item(ModContent.ItemType<Scarabine>(), 1));
-            AddIngredient(recipe, ItemType<Forfeiter>(), 3, new Item(ModContent.ItemType<GalvornBar>(), 10));
-            AddLotIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Summon.Sentries.SnowPeashooterSentryStaff>(), (ModContent.ItemType<IceCrystal>(), 5 ));
-            AddLotIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Summon.Sentries.SnowPeashooterSentryStaff>(), (ModContent.ItemType<FrostShard>(), 4));
-            AddLotIngredient(recipe, ItemType<HellAuraStaff>(), (ModContent.ItemType<FireShard>(), 4));
-            //AddLotIngredient(recipe, ItemType<VenomDart>(), (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Summon.Sentries.FirePeashooterSentryStaff>(), (ModContent.ItemType<FireShard>(), 4));
+            AddIngredient(recipe, ItemType<Scarabine>(), 0, new Item(ItemType<Thompson>(), 1));
+            AddIngredient(recipe, ItemType<Forfeiter>(), 0, new Item(ItemType<Scarabine>(), 1));
+            AddIngredient(recipe, ItemType<Forfeiter>(), 3, new Item(ItemType<GalvornBar>(), 10));
+            AddLotIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Summon.Sentries.SnowPeashooterSentryStaff>(), (ItemType<IceCrystal>(), 5 ));
+            AddLotIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Summon.Sentries.SnowPeashooterSentryStaff>(), (ItemType<FrostShard>(), 4));
+            AddLotIngredient(recipe, ItemType<HellAuraStaff>(), (ItemType<FireShard>(), 4));
+            AddLotIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Summon.Sentries.FirePeashooterSentryStaff>(), (ItemType<FireShard>(), 4));
             ForeachIngredient(recipe, ItemType<FrostDaggers>(), new Item(ItemType<FrigidShard>(), 3));
-            AddLotIngredient(recipe, ItemType<ChlorophyteShortsword>(), (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<LeafShield>(), (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<ShellStaff>(), (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<ChlorophyleGlaive>(), (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<SpiderSabre2>(), (ModContent.ItemType<VenomShard>(), 1));
-            AddLotIngredient(recipe, ItemType<SparkingShortsword>(), (ModContent.ItemType<FireShard>(), 1));
-            AddLotIngredient(recipe, ItemType<Cerberus>(), (ModContent.ItemType<FireShard>(), 1));
-            AddLotIngredient(recipe, ItemType<SporePlantPot>(), (ModContent.ItemType<ToxinShard>(), 1));
-            AddLotIngredient(recipe, ItemType<Bulbasword>(), (ModContent.ItemType<ToxinShard>(), 1));
+            AddLotIngredient(recipe, ItemType<ChlorophyteShortsword>(), (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemType<LeafShield>(), (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemType<ShellStaff>(), (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemType<ChlorophyleGlaive>(), (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemType<SpiderSabre2>(), (ItemType<VenomShard>(), 1));
+            AddLotIngredient(recipe, ItemType<SparkingShortsword>(), (ItemType<FireShard>(), 1));
+            AddLotIngredient(recipe, ItemType<Cerberus>(), (ItemType<FireShard>(), 1));
+            AddLotIngredient(recipe, ItemType<SporePlantPot>(), (ItemType<ToxinShard>(), 1));
+            AddLotIngredient(recipe, ItemType<Bulbasword>(), (ItemType<ToxinShard>(), 1));
         }
         public override void RemoveIngredient(Recipe recipe)
         {
-            RemoveIngredient(recipe, ItemType<ValhallaMod.Items.Weapons.Melee.Glaives.DemoniteGlaive>(), 1);
+            RemoveIngredient(recipe, ItemType<DemoniteGlaive>(), 1);
         }
         public override void PostRecipe()
         {
@@ -508,9 +497,9 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
         {
             Recipe recipe = Recipe.Create(ItemType<GoldenBomb>());
             recipe.AddIngredient(ItemType<MagicGrenade>(), 1);
-            recipe.AddIngredient(ItemType<ValhallaMod.Items.Material.PureGoldChunk>(), 10);
+            recipe.AddIngredient(ItemType<PureGoldChunk>(), 10);
             recipe.AddIngredient(ItemType<Consolaria.Content.Items.Materials.SoulofBlight>(), 10);
-            recipe.AddTile(ModContent.TileType<CaesiumHeavyAnvilTile>());
+            recipe.AddTile(TileType<CaesiumHeavyAnvilTile>());
             recipe.Register();
         }
         static void CreateArcaneBarrage()
@@ -550,7 +539,7 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
             recipe.AddIngredient(ItemType<ObsidianSeal>(), 1);
             recipe.AddIngredient(ItemType<BismuthumBar>(), 10);
             recipe.AddIngredient(ItemID.Ectoplasm, 10);
-            recipe.AddTile(ModContent.TileType<CaesiumHeavyAnvilTile>());
+            recipe.AddTile(TileType<CaesiumHeavyAnvilTile>());
             recipe.Register();
         }
         static void CreateSnowflake()

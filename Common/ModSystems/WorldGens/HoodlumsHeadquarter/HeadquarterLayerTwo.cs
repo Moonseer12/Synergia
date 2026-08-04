@@ -1,8 +1,9 @@
 ﻿// Code by SerNik
-using Avalon.Tiles.Contagion.Coughwood;
+using Avalon.Tiles.Contagion;
 using Avalon.Tiles.Furniture.Coughwood;
 using Avalon.Tiles.Savanna;
-using Avalon.Walls;
+using Avalon.Walls.Contagion.CoughwoodFence;
+using Avalon.Walls.Contagion.CoughwoodWall;
 using Bismuth.Content.Tiles;
 using Bismuth.Content.Walls;
 using Terraria;
@@ -108,7 +109,7 @@ namespace Synergia.Common.ModSystems.WorldGens.HoodlumsHeadquarter {
                         case 2: tile.TileType = TileID.IronBrick; tile.HasTile = true; break;
                         case 3: tile.TileType = TileID.StoneSlab; tile.HasTile = true; break;
                         case 4: tile.TileType = (ushort)TileType<SwampWood>(); tile.HasTile = true; break;
-                        case 5: tile.TileType = (ushort)TileType<CoughwoodTile>(); tile.HasTile = true; break;
+                        case 5: tile.TileType = (ushort)TileType<Coughwood>(); tile.HasTile = true; break;
                         case 6: tile.TileType = TileID.Chain; tile.HasTile = true; break;
                         case 7: WorldGen.PlaceTile(worldX, worldY, TileType<CoughwoodPlatform>()); break;
                         case 8: tile.TileType = (ushort)TileType<BrambleSpikes>(); tile.HasTile = true; break;

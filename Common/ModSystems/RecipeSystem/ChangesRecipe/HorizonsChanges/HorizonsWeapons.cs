@@ -1,14 +1,9 @@
-﻿using Avalon.Items.Accessories.Hardmode;
-using Avalon.Items.Accessories.PreHardmode;
-using Avalon.Items.Material.Bars;
-using Avalon.Items.Material.Ores;
+﻿using Avalon.Items.Material.Bars;
 using Avalon.Items.Material.Shards;
 using Avalon.Items.Placeable.Tile;
-using Avalon.Items.Weapons.Melee.PreHardmode.Shurikerang;
-using Bismuth.Content.Items.Armor;
+using Avalon.Items.Weapons.Melee.Boomerangs;
 using Bismuth.Content.Items.Placeable;
 using NewHorizons.Content.Items;
-using NewHorizons.Content.Items.Accessories;
 using NewHorizons.Content.Items.Ammo;
 using NewHorizons.Content.Items.Materials;
 using NewHorizons.Content.Items.Weapons;
@@ -16,7 +11,6 @@ using NewHorizons.Content.Items.Weapons.Magic;
 using NewHorizons.Content.Items.Weapons.Ranged;
 using NewHorizons.Content.Items.Weapons.Summon;
 using NewHorizons.Content.Items.Weapons.Throwing;
-using Starforgedclassic.Content.Accessories.SkyShield;
 using Synergia.Content.Items.Weapons.Ranged;
 using Terraria;
 using Terraria.ID;
@@ -47,10 +41,10 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.HorizonsChanges
 
             AddIngredient(recipe, ItemType<HandicraftedBlunderbuss>(), 1, new Item(ItemType<LegalGunParts>(), 1));
             AddIngredient(recipe, ItemType<HandicraftedFlamethrower>(), 1, new Item(ItemType<LegalGunParts>(), 1));
-            AddLotIngredient(recipe, ItemType<NewHorizons.Content.Items.Weapons.Summon.RopeWhip>(), (ModContent.ItemType<ElasticCord>(), 1));
-            AddLotIngredient(recipe, ItemType<FlareCannon>(), (ModContent.ItemType<FireShard>(), 3));
-            AddLotIngredient(recipe, ItemType<Scorcher>(), (ModContent.ItemType<FireShard>(), 3));
-            AddLotIngredient(recipe, ItemType<FlamingFlare>(), (ModContent.ItemType<FireShard>(), 1));
+            AddLotIngredient(recipe, ItemType<NewHorizons.Content.Items.Weapons.Summon.RopeWhip>(), (ItemType<ElasticCord>(), 1));
+            AddLotIngredient(recipe, ItemType<FlareCannon>(), (ItemType<FireShard>(), 3));
+            AddLotIngredient(recipe, ItemType<Scorcher>(), (ItemType<FireShard>(), 3));
+            AddLotIngredient(recipe, ItemType<FlamingFlare>(), (ItemType<FireShard>(), 1));
             AddIngredient(recipe, ItemType<NewHorizons.Content.Items.Weapons.Summon.RopeWhip>(), 1, new Item(ItemID.Wood, 12));
             AddIngredient(recipe, ItemType<Carnwennan>(), 1, new Item(ItemType<PureGoldChunk>(), 10));
             AddIngredient(recipe, ItemType<DarkVolley>(), 1, new Item(ItemType<WickedShard>(), 5));
@@ -61,7 +55,7 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.HorizonsChanges
             AddIngredient(recipe, ItemType<GelCanister>(), 1, new Item(ItemType<HardenedGlass>(), 1));
             AddIngredient(recipe, ItemType<HymnOfProtection>(), 0, new Item(ItemType<TatteredBook>(), 1));
             AddIngredient(recipe, ItemType<HymnOfProtection>(), 2, new Item(ItemType<AluminiumBar>(), 5));
-            AddLotIngredient(recipe, ItemType<ClockworkShotgun>(), (ModContent.ItemType<Clocklock>(), 1));
+            AddLotIngredient(recipe, ItemType<ClockworkShotgun>(), (ItemType<Clocklock>(), 1));
             AddIngredient(recipe, ItemType<CrimerasTongue>(), 1, new Item(ItemType<BambooWhip>(), 1));
             AddIngredient(recipe, ItemType<HungryWorm>(), 1, new Item(ItemType<BambooWhip>(), 1));
             AddIngredient(recipe, ItemType<NanoStar>(), 0, new Item(ItemType<AluminiumBar>(), 8));
@@ -113,7 +107,7 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.HorizonsChanges
         {
             Recipe recipe = Recipe.Create(ItemType<PalladiumWaraxe>(), 50);
             recipe.AddIngredient(ItemID.PalladiumBar, 1);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
         static void CreateOK()
@@ -134,7 +128,7 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.HorizonsChanges
         {
             Recipe recipe = Recipe.Create(ItemType<CobaltKunai>(), 50);
             recipe.AddIngredient(ItemID.CobaltBar, 1);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
         static void CreateTW()

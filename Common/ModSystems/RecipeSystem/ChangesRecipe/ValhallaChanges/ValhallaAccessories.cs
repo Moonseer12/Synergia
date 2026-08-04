@@ -10,11 +10,9 @@ using ValhallaMod.Items.Accessory;
 using ValhallaMod.Items.Accessory.Active;
 using ValhallaMod.Items.Accessory.Shield;
 using ValhallaMod.Items.Material.Bar;
-using static Synergia.Common.ModSystems.RecipeSystem.RecipeGroups;
-using static Terraria.ModLoader.ModContent;
 
 
-namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
+namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.ValhallaChanges {
 
         public class ValhallaAccessories : BaseRecipe {
 

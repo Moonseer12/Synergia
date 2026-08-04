@@ -35,9 +35,6 @@
       <Reference Include="NewHorizons">
         <HintPath>..\..\ModReader\NewHorizons.dll</HintPath>
       </Reference>
-      <Reference Include="PackBuilder">
-        <HintPath>lib\PackBuilder.dll</HintPath>
-      </Reference>
       <Reference Include="ParticleLibrary">
         <HintPath>lib\ParticleLibrary.dll</HintPath>
       </Reference>
@@ -61,12 +58,6 @@
       </Reference>
       <Reference Include="ValhallaMod">
         <HintPath>..\..\ModReader\ValhallaMod.dll</HintPath>
-      </Reference>
-      <Reference Include="VervCaves">
-        <HintPath>..\..\ModReader\VervCaves\VervCaves.dll</HintPath>
-      </Reference>
-      <Reference Include="VitalityMod">
-        <HintPath>lib\VitalityMod.dll</HintPath>
       </Reference>
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
 		<Publicize Include="tModLoader" PublicizeTarget="Fields, Types, Methods" />

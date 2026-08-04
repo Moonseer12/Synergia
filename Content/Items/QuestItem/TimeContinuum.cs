@@ -1,10 +1,8 @@
-﻿
-using Avalon.Items.Material.Shards;
+﻿using Avalon.Tiles.Furniture.Crafting;
 using Consolaria.Content.Items.Materials;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ValhallaMod.Items.Material;
 
 namespace Synergia.Content.Items.QuestItem
@@ -33,10 +31,10 @@ namespace Synergia.Content.Items.QuestItem
         public override void AddRecipes()
         {
             var recipe = CreateRecipe()
-                .AddIngredient(ModContent.ItemType<TatteredBook>(), 1)
-                .AddIngredient(ModContent.ItemType<FragmentsOfTime>(), 6)
-                .AddIngredient(ModContent.ItemType<SoulofBlight>(), 5)
-                .AddTile(ModContent.TileType<Avalon.Tiles.TomeForge>());
+                .AddIngredient(ItemType<TatteredBook>(), 1)
+                .AddIngredient(ItemType<FragmentsOfTime>(), 6)
+                .AddIngredient(ItemType<SoulofBlight>(), 5)
+                .AddTile(TileType<TomeForge>());
 
             if (ModLoader.TryGetMod("PrimeRework", out Mod primeReworkMod))
             {

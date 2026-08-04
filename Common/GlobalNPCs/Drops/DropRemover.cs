@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Avalon.Items.Weapons.Magic.Hardmode.MagicGrenade;
+using Avalon.Items.Weapons.Magic.Other;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;

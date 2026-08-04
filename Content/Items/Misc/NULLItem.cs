@@ -1,9 +1,6 @@
-﻿using Avalon.Items.Armor.PreHardmode;
-using Avalon.Items.Material.Bars;
+﻿using Avalon.Items.Material.Bars;
 using Avalon.Items.Material.Herbs;
 using Avalon.Items.Material.Ores;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Synergia.Common.ModConfigs;
 using Synergia.Common.Rarities;
 using Synergia.Common.SynergiaCondition;
@@ -13,7 +10,6 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using static Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges.Avalons;
-using static Synergia.Common.SUtils.LocUtil;
 
 namespace Synergia.Content.Items.Misc {
     public partial class NULLItem {

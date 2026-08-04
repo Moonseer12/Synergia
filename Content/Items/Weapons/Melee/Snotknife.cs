@@ -1,13 +1,9 @@
-﻿using System;
-using Avalon.Dusts;
+﻿using Avalon.Dusts;
 using Avalon.Items.Material.Bars;
-using Avalon.Items.Weapons.Melee.PreHardmode.Snotsabre;
-using Microsoft.Xna.Framework;
+using Avalon.Projectiles.Melee.Swords;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ValhallaMod.Projectiles.AI;
 
 namespace Synergia.Content.Items.Weapons.Melee {
@@ -23,7 +19,7 @@ namespace Synergia.Content.Items.Weapons.Melee {
             base.Item.knockBack = 5f;
             base.Item.useAnimation = 18;
             base.Item.useTime = 9;
-            base.Item.useStyle = 13;
+            base.Item.useStyle = ItemUseStyleID.Rapier;
             base.Item.width = 32;
             base.Item.height = 32;
             base.Item.UseSound = new SoundStyle?(SoundID.Item1);
@@ -31,7 +27,7 @@ namespace Synergia.Content.Items.Weapons.Melee {
             base.Item.autoReuse = true;
             base.Item.noUseGraphic = true;
             base.Item.noMelee = true;
-            base.Item.rare = 1;
+            base.Item.rare = ItemRarityID.Blue;
             base.Item.value = Item.sellPrice(0, 0, 25, 0);
             base.Item.shoot = ModContent.ProjectileType<SnotknifeP>();
             base.Item.shootSpeed = 3f;

@@ -46,7 +46,7 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
         public static int CaesiumForge              { get; private set; } =              ItemType<CaesiumForge>();
         // Tile public static int Tile              { get; private set; } =                         TileType<T>();
         public static int LCS                       { get; private set; } =           TileID.LunarCraftingStation;
-        public static int CaesiumForgeTile          { get; private set; } = TileType<Avalon.Tiles.CaesiumForge>();
+        public static int CaesiumForgeTile          { get; private set; } = TileType<Avalon.Tiles.Furniture.Crafting.CaesiumForge>();
 	    public static int CaesiumHeavyAnvilTile     { get; private set; } =     TileType<CaesiumHeavyAnvilTile>();
     }
 }

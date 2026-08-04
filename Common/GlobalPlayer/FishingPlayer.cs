@@ -1,6 +1,6 @@
 ﻿using Avalon.Items.Material;
 using Avalon.Items.Other;
-using Avalon.Items.Weapons.Melee.Hardmode.PossessedFlamesaw;
+using Avalon.Items.Weapons.Melee.Boomerangs;
 using Synergia.Content.Items.Weapons.Ranged;
 using Synergia.Content.Items.Weapons.Throwing;
 using Terraria;

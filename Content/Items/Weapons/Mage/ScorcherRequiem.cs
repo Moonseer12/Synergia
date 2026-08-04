@@ -157,9 +157,24 @@ public class ScorcherHeldItemProj : ModProjectile
             0f,
             player.whoAmI
         );
-
-        ParticleSystem.AddParticle(new EnergyRevolverParticle(), beamStartPos, Vector2.Normalize(velocity) * 2, new Color(255, 140, 0, 0), 0, 0.8f, 14);
-        ParticleSystem.AddParticle(new EnergyRevolverParticle(), beamStartPos, default, new Color(255, 69, 0, 0), 0, 1, 20);
+        var p = VanillaParticles.RequestPrettySparkleParticle();
+		p.ColorTint = new Color(255, 140, 0, 0);
+		p.Scale = new Vector2(5f, 1.1f);
+		p.Rotation = Projectile.velocity.ToRotation() * 2;
+		p.LocalPosition = beamStartPos;
+		p.TimeToLive = 14;
+		p.FadeInEnd = 2;
+		p.FadeOutStart = 4;
+		Main.ParticleSystem_World_OverPlayers.Add(p);
+        var p2 = VanillaParticles.RequestPrettySparkleParticle();
+		p2.ColorTint = new Color(255, 69, 0, 0);
+		p2.Scale = new Vector2(5f, 1.1f);
+		p2.Rotation = default;
+		p2.LocalPosition = beamStartPos;
+		p2.TimeToLive = 20;
+		p2.FadeInEnd = 2;
+		p2.FadeOutStart = 4;
+		Main.ParticleSystem_World_OverPlayers.Add(p2);
 
         var settings = new ParticleOrchestraSettings
         {
@@ -252,7 +267,15 @@ public class ScorcherLaser : ModProjectile
         {
             Projectile.damage = 0;
             hitPositions.Add(Projectile.Center);
-            ParticleSystem.AddParticle(new EnergyRevolverParticle(), Projectile.Center, default, new Color(64, 255, 255, 0), 0, 1, 14);
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(64, 255, 255, 0);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = default;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 14;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
             Projectile.velocity = Vector2.Zero;
             for (int i = 0; i < 10; i++)
             {
@@ -332,7 +355,15 @@ public class ScorcherLaser : ModProjectile
     {
         hitPositions.Add(Projectile.Center);
         Projectile.damage = (int)(Projectile.damage * 0.95f);
-        ParticleSystem.AddParticle(new EnergyRevolverParticle(), Projectile.Center, default, new Color(64, 128, 255, 0), 0, Main.rand.NextFloat(0.9f, 1.1f), 14);
+        var p = VanillaParticles.RequestPrettySparkleParticle();
+		p.ColorTint = new Color(64, 128, 255, 0);
+		p.Scale = new Vector2(5f, 1.1f);
+		p.Rotation = default;
+		p.LocalPosition = Projectile.Center;
+		p.TimeToLive = 14;
+		p.FadeInEnd = 2;
+		p.FadeOutStart = 4;
+		Main.ParticleSystem_World_OverPlayers.Add(p);
         for (int i = 0; i < 10; i++)
         {
             Dust d = Dust.NewDustPerfect(Projectile.Center, DustID.Torch, Main.rand.NextVector2Circular(3, 3), 24);

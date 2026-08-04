@@ -1,5 +1,4 @@
-﻿using Avalon.Items.Armor.PreHardmode;
-using Avalon.Items.Material.Herbs;
+﻿using Avalon.Items.Material.Herbs;
 using Avalon.Items.Material.Ores;
 using Synergia.Content.Items.Misc;
 using Terraria;
