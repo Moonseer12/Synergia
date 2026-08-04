@@ -1,10 +1,10 @@
 ﻿// Code by SerNik
 using Avalon.Tiles.Furniture;
+using Avalon.Tiles.Furniture.Contagion;
 using Avalon.Tiles.Furniture.Coughwood;
 using Avalon.Tiles.Herbs;
 using Bismuth.Content.Items.Other;
 using Bismuth.Content.Tiles;
-using Bismuth.Utilities;
 using Synergia.Content.Items.Weapons.Melee;
 using Synergia.Content.Items.Weapons.Ranged;
 using Synergia.Helpers;

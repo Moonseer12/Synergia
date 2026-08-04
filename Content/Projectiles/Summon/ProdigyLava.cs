@@ -68,7 +68,15 @@ namespace Synergia.Content.Projectiles.Summon
                 d.noGravity = true;
             }
 
-            ParticleSystem.AddParticle(new EnergyRevolverParticle(), Projectile.Center, default, new Color(255, 140, 0), 0, 0.8f, 20);
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(255, 140, 0);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = default;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 20;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
 
             Projectile.Kill();
         }

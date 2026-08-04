@@ -60,9 +60,15 @@ namespace Synergia.Content.Projectiles.Reworks
                 d.scale = Main.rand.NextFloat(0.8f, 1.2f);
                 d.noGravity = true;
             }
-
-            ParticleSystem.AddParticle(new EnergyRevolverParticle(), Projectile.Center, default, new Color(255, 140, 0), 0, 0.8f, 20);
-
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(255, 140, 0);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = default;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 20;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
             Player owner = Main.player[Projectile.owner];
             owner.GetModPlayer<ScreenShakePlayer>().TriggerShake(6, 0.3f);
 

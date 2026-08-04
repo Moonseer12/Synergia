@@ -1,20 +1,14 @@
 using System;
 using System.Collections.Generic;
-using Avalon.Items.Weapons.Magic.Hardmode.AquaImpact;
-using Avalon.Items.Weapons.Magic.Hardmode.Boomlash;
-using Avalon.Items.Weapons.Magic.Hardmode.DevilsScythe;
-using Avalon.Items.Weapons.Magic.Hardmode.MagicGrenade;
-using Avalon.Items.Weapons.Magic.Hardmode.Sunstorm;
-using Avalon.Items.Weapons.Magic.PreHardmode.ChaosTome;
-using Avalon.Items.Weapons.Magic.PreHardmode.Smogscreen;
-using Avalon.Items.Weapons.Melee.Hardmode.CraniumCrusher;
-using Avalon.Items.Weapons.Melee.Hardmode.DarklightLance;
-using Avalon.Items.Weapons.Melee.Hardmode.Starstorm;
-using Avalon.Items.Weapons.Melee.PreHardmode.AeonsEternity;
-using Avalon.Items.Weapons.Melee.PreHardmode.SanguineKatana;
-using Avalon.Items.Weapons.Ranged.Hardmode.CrystalTomahawk;
-using Avalon.Items.Weapons.Ranged.PreHardmode.Boompipe;
-using Avalon.Items.Weapons.Ranged.PreHardmode.EggCannon;
+using Avalon.Items.Weapons.Magic.Guns;
+using Avalon.Items.Weapons.Magic.Other;
+using Avalon.Items.Weapons.Magic.Tomes;
+using Avalon.Items.Weapons.Magic.Wands;
+using Avalon.Items.Weapons.Melee.Maces;
+using Avalon.Items.Weapons.Melee.Spears;
+using Avalon.Items.Weapons.Melee.Swords;
+using Avalon.Items.Weapons.Ranged.Misc;
+using Avalon.Items.Weapons.Ranged.Thrown;
 using Avalon.Items.Weapons.Summon.Hardmode.Gastropod;
 using Bismuth.Content.Items.Weapons.Assassin;
 using Bismuth.Content.Items.Weapons.Magical;
@@ -142,7 +136,7 @@ namespace Synergia.Common.GlobalItems.Changes
                     item.useAnimation += 4;
                     item.useTime += 4;
                 },
-                [ModContent.ItemType<Avalon.Items.Weapons.Ranged.PreHardmode.EggCannon.EggCannon>()] = item =>
+                [ModContent.ItemType<Avalon.Items.Weapons.Ranged.Misc.EggCannon>()] = item =>
                 {
                     item.damage -= 6;
                     item.useAnimation += 2;
@@ -574,7 +568,7 @@ namespace Synergia.Common.GlobalItems.Changes
                 {
                     item.damage += 15;
                 },
-                [ModContent.ItemType<Avalon.Items.Weapons.Magic.Hardmode.DevilsScythe.DevilsScythe>()] = item =>
+                [ModContent.ItemType<Avalon.Items.Weapons.Magic.Tomes.DevilsScythe>()] = item =>
                 {
                     item.damage -= 70;
                     item.useAnimation += 14;

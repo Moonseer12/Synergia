@@ -1,4 +1,4 @@
-﻿using Avalon.Items.Weapons.Melee.Hardmode.HellboundHalberd;
+﻿using Avalon.Items.Weapons.Melee.Misc;
 using Bismuth.Utilities.ModSupport;
 using Synergia.Common.ModSystems.Hooks.Ons;
 using Synergia.Content.Items.QuestItem;

@@ -75,12 +75,6 @@ namespace Synergia.Content.Items.Weapons.Ranged
             return false;
         }
 
-        public override void UseStyle(Player player, Rectangle heldItemFrame)
-        {
-            if (ModContent.GetInstance<AvalonClientConfig>().AdditionalScreenshakes)
-                UseStyles.gunStyle(player, 0.05f, 5f, 3f);
-        }
-
         public override Vector2? HoldoutOffset()
         {
             return new Vector2(-10f, -1f);

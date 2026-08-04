@@ -1,4 +1,7 @@
-﻿using System; using Microsoft.Xna.Framework;using Microsoft.Xna.Framework.Graphics;using Terraria;using Terraria.ID;using Terraria.ModLoader;using Terraria.GameContent;using Terraria.Audio;
+﻿using Terraria;
+using Terraria.ID;
+using Terraria.GameContent;
+using Terraria.Audio;
 
 namespace Synergia.Content.Projectiles.Thrower
 {
@@ -98,7 +101,7 @@ namespace Synergia.Content.Projectiles.Thrower
             Projectile.Kill();
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
          
             for (int i = 0; i < 25; i++)

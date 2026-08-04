@@ -80,17 +80,15 @@ namespace Synergia.Content.Projectiles.Reworks.Reworks2
                 d.noGravity = true;
             }
 
-            // Optionally можно оставить эффект из твоего мода
-            ParticleSystem.AddParticle(
-                new EnergyRevolverParticle(),
-                Projectile.Center,
-                default,
-                new Color(0, 255, 120), // зелёный джейд
-                0,
-                0.9f,
-                22
-            );
-
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(0, 255, 120);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = default;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 22;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
             Projectile.Kill();
         }
 

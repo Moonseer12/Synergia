@@ -1,16 +1,14 @@
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 using System;
 using System.Collections.Generic;
 using Bismuth.Content.NPCs;
-using Avalon.NPCs.Bosses.PreHardmode;
 using ValhallaMod.NPCs.Snowman;
 using ValhallaMod.NPCs.Emperor;
 using ValhallaMod.NPCs.Pirate;
 using ValhallaMod.NPCs.Jungle;
-using Synergia.Common.GlobalNPCs.AI;
 using Consolaria.Content.NPCs.Bosses.Ocram;
+using Avalon.NPCs.Bosses.PreHardmode.DesertBeak;
 
 namespace Synergia.Common.GlobalNPCs.Changes
 {

@@ -34,14 +34,6 @@ namespace Synergia.Content.Items.Weapons.Ranged
 			Item.damage = 56;
 		}
 
-		public override void UseStyle(Player player, Rectangle heldItemFrame)
-		{
-			if (ModContent.GetInstance<AvalonClientConfig>().AdditionalScreenshakes)
-			{
-				UseStyles.gunStyle(player, 0.05f, 5f, 3f);
-			}
-		}
-
 		public override bool AltFunctionUse(Player player)
 		{
 			return true;

@@ -1,10 +1,6 @@
 ﻿using Avalon.Items.Material.Shards;
-using Avalon.Items.Placeable.Crafting;
-using Avalon.Tiles;
-using PrimeRework;
-using Synergia.Content.Items.Weapons.Throwing;
+using Avalon.Tiles.Furniture.Crafting;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace Synergia.Content.Items.QuestItem {
     public class BottomlessEvil : ModItem {
@@ -17,11 +13,11 @@ namespace Synergia.Content.Items.QuestItem {
         public override void AddRecipes()
         {
             var recipe = CreateRecipe()
-                .AddIngredient(ModContent.ItemType<WickedShard>(), 10)
+                .AddIngredient(ItemType<WickedShard>(), 10)
                 .AddIngredient(ItemID.SoulofMight, 3)
                 .AddIngredient(ItemID.SoulofFright, 3)
                 .AddIngredient(ItemID.SoulofSight, 3)
-                .AddTile(ModContent.TileType<Avalon.Tiles.TomeForge>());
+                .AddTile(TileType<TomeForge>());
 
             if (ModLoader.TryGetMod("PrimeRework", out Mod primeReworkMod))
             {

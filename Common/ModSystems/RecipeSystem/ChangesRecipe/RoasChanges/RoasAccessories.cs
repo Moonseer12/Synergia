@@ -1,26 +1,10 @@
-﻿using Avalon.Items.Accessories.Hardmode;
-using Avalon.Items.Accessories.PreHardmode;
-using Avalon.Items.Material.Ores;
+﻿using Avalon.Items.Material.Ores;
 using Avalon.Items.Material.Shards;
-using Avalon.Items.Material.TomeMats;
-using Avalon.Items.Potions.Buff;
-using Avalon.Items.Tomes.PreHardmode;
 using Bismuth.Content.Items.Materials;
-using Consolaria.Content.Items.Materials;
-using NewHorizons.Content.Items.Materials;
-using Starforgedclassic.Content.Accessories.SkyShield;
-using Synergia.Content.Items.Misc;
 using Terraria;
-using Terraria.ID;
-using ValhallaMod.Items.Accessory;
-using ValhallaMod.Items.Accessory.Shield;
-using ValhallaMod.Items.Garden;
 using ValhallaMod.Items.Material;
-using ValhallaMod.Items.Material.Bar;
-using static Synergia.Content.Items.Misc.NULLItem;
-using static Terraria.ModLoader.ModContent;
 
-namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
+namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.RoasChanges {
         public class RoasAccessories : BaseRecipe {
 
             public override void Ingredient(Recipe recipe) {

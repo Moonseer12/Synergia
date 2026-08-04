@@ -1,15 +1,12 @@
 ﻿using Avalon.Items.Armor.Hardmode;
-using Avalon.Items.Armor.PreHardmode;
 using Avalon.Items.Armor.Superhardmode;
 using Avalon.Items.Material;
-using Avalon.Tiles;
+using Avalon.Tiles.Furniture.Crafting;
 using NewHorizons.Content.Items.Armor.NeutronArmor;
 using NewHorizons.Content.Items.Materials;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using static Synergia.Common.ModSystems.RecipeSystem.RecipeGroups;
-using static Terraria.ModLoader.ModContent;
 
 namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
     public partial class Avalons {

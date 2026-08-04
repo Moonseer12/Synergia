@@ -1,23 +1,17 @@
 ﻿using System;
 using Avalon.Dusts;
 using Avalon.Items.Material.Bars;
-using Avalon.Items.Material.Shards;
 using Bismuth.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using Synergia.Common;
-using Synergia.Content.Projectiles.ActiveAccessoriesProjectiles;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ValhallaMod.DamageClasses;
 using ValhallaMod.Items.AI;
-using static Terraria.ModLoader.ModContent;
 
 namespace Synergia.Content.Items.ActiveAccessories
 {
     [AutoloadEquip(EquipType.Neck)]
-    public class RunicWard : ValhallaMod.Items.AI.ActiveAccessoryItem
+    public class RunicWard : ActiveAccessoryItem
     {
         public override void SetStaticDefaults()
         {
@@ -39,18 +33,18 @@ namespace Synergia.Content.Items.ActiveAccessories
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RuneEssence>(), 8)
+                .AddIngredient(ItemType<RuneEssence>(), 8)
                 .AddIngredient(ItemID.MythrilBar, 10)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RuneEssence>(), 8)
+                .AddIngredient(ItemType<RuneEssence>(), 8)
                 .AddIngredient(ItemID.OrichalcumBar, 10)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RuneEssence>(), 8)
-                .AddIngredient(ModContent.ItemType<NaquadahBar>(), 10)
+                .AddIngredient(ItemType<RuneEssence>(), 8)
+                .AddIngredient(ItemType<NaquadahBar>(), 10)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
         }
@@ -234,13 +228,13 @@ namespace Synergia.Content.Items.ActiveAccessories
             Projectile.Kill();
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             if (!hasExploded)
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    Vector2 velocity = new Vector2(
+                    Vector2 velocity = new(
                         Main.rand.NextFloat(-1.5f, 1.5f),
                         Main.rand.NextFloat(-2f, 0f));
 
@@ -267,7 +261,7 @@ namespace Synergia.Content.Items.ActiveAccessories
             Color drawColor = Projectile.GetAlpha(new Color(100, 255, 200));
             drawColor.A = (byte)(80);
 
-            Color glowColor = new Color(0, 200, 255);
+            Color glowColor = new(0, 200, 255);
 
             for (int i = 0; i < 6; i++)
             {

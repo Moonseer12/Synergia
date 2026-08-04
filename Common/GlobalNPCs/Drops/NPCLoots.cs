@@ -4,28 +4,35 @@ using Avalon.Items.Material;
 using Avalon.Items.Material.Ores;
 using Avalon.Items.Material.Shards;
 using Avalon.Items.Material.TomeMats;
-using Avalon.Items.Weapons.Ranged.Hardmode.SunsShadow;
+using Avalon.Items.Weapons.Ranged.Misc;
+using Avalon.NPCs.Contagion;
 using Avalon.NPCs.Critters;
-using Avalon.NPCs.Hardmode;
-using Avalon.NPCs.PreHardmode;
+using Avalon.NPCs.Dungeon;
+using Avalon.NPCs.Hell;
+using Avalon.NPCs.Underground;
+using Bismuth.Content.NPCs;
 using Consolaria.Content.NPCs;
 using NewHorizons.Content.Items.Materials;
 using NewHorizons.Content.NPCs;
 using Synergia.Common.SynergiaCondition;
 using Synergia.Content.Items.Accessories;
+using Synergia.Content.Items.ActiveAccessories;
 using Synergia.Content.Items.Weapons.AuraStaff;
 using Synergia.Content.Items.Weapons.Throwing;
+using Synergia.Content.NPCs.Contagion;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ValhallaMod.Items.Accessory.Active;
 using ValhallaMod.Items.Accessory.Shield;
+using ValhallaMod.Items.Armor;
 using ValhallaMod.Items.Garden;
 using ValhallaMod.Items.Material;
-using ValhallaMod.NPCs.Corruption;
+using ValhallaMod.Items.Weapons.Magic;
+using ValhallaMod.Items.Weapons.Ranged.Bows;
 using ValhallaMod.NPCs.Dungeon;
+using ValhallaMod.NPCs.Corruption;
 using ValhallaMod.NPCs.Frost;
 using ValhallaMod.NPCs.Goblin;
 using ValhallaMod.NPCs.Jungle;
@@ -36,7 +43,6 @@ using ValhallaMod.NPCs.Underground;
 using ValhallaMod.NPCs.Underworld;
 using ValhallaMod.NPCs.Zombies;
 using static Synergia.ModList;
-using static Terraria.ModLoader.ModContent;
 using Gargoyle = ValhallaMod.NPCs.Granite.Gargoyle;
 
 namespace Synergia.Common.GlobalNPCs.Drops {
@@ -168,11 +174,24 @@ namespace Synergia.Common.GlobalNPCs.Drops {
                npcLoot.Add(ItemDropRule.Common(ItemType<BrokenGlaive>(), 4));
                npcLoot.Add(ItemDropRule.Common(ItemType<BrokenSpear>(), 4));
             }
+            if (npc.type == NPCID.Probe) { npcLoot.Add(ItemDropRule.Common(ItemType<PostMechWings>(), 1000)); }
+            if (npc.type == NPCID.BloodNautilus) { npcLoot.Add(ItemDropRule.Common(ItemType<BloodyNecklace>(), 10)); }
+            if (npc.type == NPCID.SkeletonSniper) { npcLoot.Add(ItemDropRule.Common(ItemType<SniperHead>(), 10)); }
+            if (npc.type == NPCID.SkeletonSniper) { npcLoot.Add(ItemDropRule.Common(ItemType<SniperBody>(), 10)); }
+            if (npc.type == NPCID.SkeletonSniper) { npcLoot.Add(ItemDropRule.Common(ItemType<SniperLegs>(), 10)); }
+            if (npc.type == NPCID.IlluminantBat) { npcLoot.Add(ItemDropRule.Common(ItemType<IluminantBatbow>(), 20)); }
+            if (npc.type == NPCType<ArchDemon>()) { npcLoot.Add(ItemDropRule.Common(ItemType<ForsakenRelic>(), 20)); }
+            if (npc.type == NPCType<RadiantBones>() || npc.type == NPCType<RadiantBones2>() || npc.type == NPCType<RadiantBones3>() || npc.type == NPCType<RadiantBones4>() || npc.type == NPCType<Radiator>() || npc.type == NPCType<Radiator2>()) {
+                npcLoot.Add(ItemDropRule.Common(ItemType<ThunderShard>(),5, 1, 3));
+            }
+            if (npc.type == NPCType<SandWorm>()) { npcLoot.Add(ItemDropRule.Common(ItemType<BagOfSand>(), 40, 1, 1)); }
+            if (npc.type == NPCType<EvilNecromancer>()) { npcLoot.Add(ItemDropRule.Common(ItemType<CursedMirror>(), 10)); }
+            if (npc.type == NPCType<Ickslime>() || npc.type == NPCType<TaintedSlime>()) { npcLoot.Add(ItemDropRule.Common(ItemType<StickyPad>(), 15)); }
             #endregion
             #region RottenFleshDrops
             if (npc.type == NPCType<ZombieUnicorn>() || npc.type == NPCType<ZombieUmbrella>() || npc.type == NPCType<ZombieUmbrella2>() || npc.type == NPCType<ZombieUmbrella3>() || npc.type == NPCType<ZombieTactical>() || npc.type == NPCType<ZombieTactical2>() || npc.type == NPCType<ZombieLibrarian>() || npc.type == NPCType<ZombieNinja>() || npc.type == NPCType<ZombieBucket>() || npc.type == NPCType<ZombieBalloon>() || npc.type == NPCType<ZombieBalloon2>() || npc.type == NPCType<ZombieBalloon3>() || npc.type == NPCType<CarrotZombie>()) {
                 npcLoot.Add(ItemDropRule.Common(ItemType<RottenFlesh>(), 10, 1, 2));
-                npcLoot.Add(ItemDropRule.Common(ItemType<SoullessLocket>(), 100)); // эти враги уже были что бы код не повторялся он был разделен
+                npcLoot.Add(ItemDropRule.Common(ItemType<SoullessLocket>(), 100));
             }
             #endregion
             #region SkinningNPC

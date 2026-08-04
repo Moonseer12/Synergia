@@ -1,15 +1,11 @@
 ﻿using System;
-using System.IO;
 using Avalon.Common;
 using Avalon.Common.Templates;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace Synergia.Content.Projectiles.Reworks.Reworks2
 {
@@ -302,7 +298,7 @@ namespace Synergia.Content.Projectiles.Reworks.Reworks2
             return false;
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
         }
     }

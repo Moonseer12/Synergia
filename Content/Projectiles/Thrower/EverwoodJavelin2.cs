@@ -1,8 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.Audio;
 using Synergia.Content.Buffs;
 
@@ -55,7 +52,7 @@ namespace Synergia.Content.Projectiles.Thrower
             SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             for (int i = 0; i < 10; i++)
             {

@@ -96,15 +96,15 @@ namespace Synergia.Content.Projectiles.Reworks.AltUse
                 d.noGravity = true;
             }
 
-            ParticleSystem.AddParticle(
-                new EnergyRevolverParticle(),
-                Projectile.Center,
-                Vector2.Zero,
-                new Color(80, 160, 255),
-                0,
-                1.2f,
-                25
-            );
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(80, 160, 255);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = Projectile.rotation * 0;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 25;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
 
             // Направление к мыши
             Vector2 toMouse = Main.MouseWorld - Projectile.Center;

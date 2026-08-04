@@ -1,5 +1,4 @@
-﻿using Avalon.Items.Weapons.Magic.PreHardmode.LotusLeech;
-using Avalon.NPCs.TownNPCs;
+﻿using Avalon.NPCs.TownNPCs;
 using Bismuth.Utilities.ModSupport;
 using Synergia.Common.ModSystems.Hooks.Ons;
 using Synergia.Content.Items.QuestItem;
@@ -25,7 +24,7 @@ namespace Synergia.Content.Quests {
         public override bool IsCompleted(Player player) => BaseIsCompleted(player);
         public override void OnChatButtonClicked(Player player) {
             BaseOnChatButtonClicked(player);
-            CheckItem(player, ref player.GetModPlayer<QuestBoolean>().LibrarianQuest1, ItemType<RustyBook>(), 1, 1, LocQuestKey("LibrarianQuest_First", "QuestCompleted"), LocQuestKey("LibrarianQuest_First", "QuestCompletedFalse"), ItemType<LotusLeech>());
+            CheckItem(player, ref player.GetModPlayer<QuestBoolean>().LibrarianQuest1, ItemType<RustyBook>(), 1, 1, LocQuestKey("LibrarianQuest_First", "QuestCompleted"), LocQuestKey("LibrarianQuest_First", "QuestCompletedFalse"));
             if (Progress == 0) {
                 CompletedQuickSpawnItem(player, ItemID.ManaPotion, 15);
                 HookForQuest.NpcQuestKeys.Remove(QuestNPC);

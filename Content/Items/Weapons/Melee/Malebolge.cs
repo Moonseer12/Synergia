@@ -1,10 +1,6 @@
 using System;
-using System.Diagnostics.Metrics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Synergia.Common.Rarities;
 using Synergia.Content.Dusts;
-using Synergia.Content.Projectiles.Aura;
 using Synergia.Content.Projectiles.Other;
 using Synergia.Helpers;
 using Terraria;
@@ -13,7 +9,6 @@ using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace Synergia.Content.Items.Weapons.Melee
 {
@@ -43,7 +38,7 @@ namespace Synergia.Content.Items.Weapons.Melee
             Item.noMelee = true;
             Item.noUseGraphic = true;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.shoot = 1;
+            Item.shoot = ProjectileID.WoodenArrowFriendly;
             Item.shootSpeed = 5f;
             Item.UseSound = SoundID.Item1;
         }
@@ -314,8 +309,6 @@ namespace Synergia.Content.Items.Weapons.Melee
     }
     public class MalebolgeMeteor : ModProjectile
     {
-        private const string GlowTexture = "Synergia/Content/Items/Weapons/Melee/MalebolgeMeteor_Glow";
-
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4;
@@ -414,7 +407,7 @@ namespace Synergia.Content.Items.Weapons.Melee
         {
             SpriteBatch spriteBatch = Main.spriteBatch;
             Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("Consolaria/Assets/Textures/Projectiles/LightTrail_1");
-            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, texture.Height * 0.5f);
+            Vector2 drawOrigin = new(texture.Width * 0.5f, texture.Height * 0.5f);
             SpriteEffects effects = (Projectile.spriteDirection == -1) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             for (int k = 0; k < Projectile.oldPos.Length - 1; k++)
             {

@@ -1,10 +1,8 @@
 // Code by SerNik
-using Synergia.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
 using Terraria.ModLoader.IO;
-using static Terraria.ModLoader.BackupIO;
 
 namespace Synergia.Common.ModSystems.WorldGens {
     public class SynergiaGenVars: ModSystem {

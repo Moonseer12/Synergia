@@ -1,4 +1,5 @@
-﻿using Avalon.Tiles.Furniture;
+﻿using Avalon.Tiles.Furniture.Crafting;
+using Avalon.Tiles.Furniture.Metal;
 using Avalon.Tiles.Furniture.PurpleDungeon;
 using Avalon.Tiles.Furniture.ResistantWood;
 using Avalon.Tiles.Ores;
@@ -241,7 +242,7 @@ namespace Synergia.Common.ModSystems.WorldGens
             WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 62, SynergiaGenVars.SnowVillagePositionY - 10, TileID.Lampposts);
             WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 29, SynergiaGenVars.SnowVillagePositionY - 10, TileID.Lampposts);
             WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 56, SynergiaGenVars.SnowVillagePositionY - 10, TileID.WaterFountain, mute: false, 3);
-            WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 27, SynergiaGenVars.SnowVillagePositionY - 11, (ushort)TileType<Avalon.Tiles.NickelAnvil>());
+            WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 27, SynergiaGenVars.SnowVillagePositionY - 11, (ushort)TileType<NickelAnvil>());
             WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 18, SynergiaGenVars.SnowVillagePositionY - 11, (ushort)TileType<Workbench>());
             WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 16, SynergiaGenVars.SnowVillagePositionY - 11, TileID.FishingCrate, mute: false, 18);
             WorldGen.PlaceObject(SynergiaGenVars.SnowVillagePositionX + 9, SynergiaGenVars.SnowVillagePositionY - 11, (ushort)TileType<LaminatedTable>());

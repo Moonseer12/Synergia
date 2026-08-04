@@ -1,12 +1,7 @@
-﻿using Avalon.Items.Material.Shards;
-using Avalon.Items.Placeable.Crafting;
-using Avalon.Tiles;
+﻿using Avalon.Tiles.Furniture.Crafting;
 using Bismuth.Content.Items.Materials;
 using NewHorizons.Content.Items.Materials;
-using PrimeRework;
-using Synergia.Content.Items.Weapons.Throwing;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ValhallaMod.Items.Material;
 
 namespace Synergia.Content.Items.QuestItem {
@@ -20,16 +15,11 @@ namespace Synergia.Content.Items.QuestItem {
         public override void AddRecipes()
         {
             var recipe = CreateRecipe()
-                .AddIngredient(ModContent.ItemType<TatteredBook>(), 1)
-                                .AddIngredient(ModContent.ItemType<PeatPowder>(), 10)
-
-                                                .AddIngredient(ModContent.ItemType<AncientScrap>(), 8)
-
- //whar the FUCK
-
-                .AddTile(ModContent.TileType<Avalon.Tiles.TomeForge>());
-
-            recipe.Register();
+                .AddIngredient(ItemType<TatteredBook>(), 1)
+                .AddIngredient(ItemType<PeatPowder>(), 10)
+                .AddIngredient(ItemType<AncientScrap>(), 8)
+                .AddTile(TileType<TomeForge>())
+                .Register();
         }
     }
 }

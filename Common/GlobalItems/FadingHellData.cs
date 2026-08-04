@@ -1,9 +1,6 @@
-﻿using Avalon.Items.Weapons.Magic.Hardmode.DevilsScythe;
-using Avalon.Items.Weapons.Magic.Hardmode.FreezeBolt;
-using Avalon.Items.Weapons.Magic.Hardmode.Outbreak;
-using Avalon.Items.Weapons.Magic.PreHardmode.ChaosTome;
-using Avalon.Items.Weapons.Magic.PreHardmode.FrozenLyre;
-using Avalon.Items.Weapons.Magic.PreHardmode.GlacierStaff;
+﻿using Avalon.Items.Weapons.Magic.Other;
+using Avalon.Items.Weapons.Magic.Tomes;
+using Avalon.Items.Weapons.Magic.Wands;
 using Consolaria.Content.Items.Weapons.Magic;
 using NewHorizons.Content.Items.Weapons.Magic;
 using NVorbis;

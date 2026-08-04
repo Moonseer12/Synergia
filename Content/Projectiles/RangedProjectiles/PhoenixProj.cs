@@ -85,9 +85,24 @@ namespace Synergia.Content.Projectiles.RangedProjectiles
                 d.velocity = Main.rand.NextVector2Circular(2.5f, 2.5f);
                 d.noGravity = true;
             }
-
-            ParticleSystem.AddParticle(new EnergyRevolverParticle(), Projectile.Center, default, new Color(255, 100, 0), 0, 0.8f, 20);
-            ParticleSystem.AddParticle(new EnergyRevolverParticle(), Projectile.Center, default, new Color(255, 50, 0), 0, 0.6f, 25);
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(255, 100, 0);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = default;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 20;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
+            var p2 = VanillaParticles.RequestPrettySparkleParticle();
+		    p2.ColorTint = new Color(255, 50, 0);
+		    p2.Scale = new Vector2(5f, 1.1f);
+		    p2.Rotation = default;
+		    p2.LocalPosition = Projectile.Center;
+		    p2.TimeToLive = 25;
+		    p2.FadeInEnd = 2;
+		    p2.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
 
             Projectile.Kill();
         }

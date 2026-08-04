@@ -1,9 +1,9 @@
-﻿using Avalon.NPCs.Bosses.Hardmode;
-using Avalon.NPCs.Bosses.PreHardmode;
-using Avalon.NPCs.Hardmode;
+﻿using Avalon.NPCs.Bosses.Hardmode.Phantasm;
+using Avalon.NPCs.Bosses.PreHardmode.BacteriumPrime;
+using Avalon.NPCs.Bosses.PreHardmode.DesertBeak;
+using Avalon.NPCs.Hell;
 using Synergia.Common.GlobalNPCs.Changes;
 using Terraria;
-using static Terraria.ModLoader.ModContent;
 
 namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
     public partial class Avalons {

@@ -1,5 +1,5 @@
-using Avalon.Items.Weapons.Magic.Hardmode.AquaImpact;
-using Avalon.Items.Weapons.Magic.Hardmode.Sunstorm;
+using Avalon.Items.Weapons.Magic.Tomes;
+using Avalon.Items.Weapons.Magic.Wands;
 using Bismuth.Content.Items.Weapons.Throwing;
 using Bismuth.Content.Projectiles;
 using Terraria.GameContent;

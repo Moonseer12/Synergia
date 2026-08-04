@@ -1,17 +1,11 @@
 ﻿using Avalon.Common;
-using Avalon.Common.Extensions;
 using Avalon.Common.Templates;
-using Avalon.Data.Sets;
-using Avalon.Dusts;
-using Microsoft.Xna.Framework;
+using Avalon.Projectiles.Ranged.Misc;
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using static Avalon.Items.Weapons.Ranged.PreHardmode.Boompipe.Boompipe;
 
 namespace Synergia.Content.Projectiles.Reworks.AltUse
 {

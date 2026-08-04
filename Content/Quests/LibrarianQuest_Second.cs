@@ -1,5 +1,4 @@
 ﻿using Avalon.Items.Material.TomeMats;
-using Avalon.Items.Weapons.Magic.PreHardmode.LotusLeech;
 using Avalon.NPCs.TownNPCs;
 using Bismuth.Utilities.ModSupport;
 using Synergia.Common.ModSystems.Hooks.Ons;

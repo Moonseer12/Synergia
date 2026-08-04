@@ -1,6 +1,4 @@
 using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace Synergia.Content.Projectiles.Boss.KingSlimeBuff
 {
@@ -18,7 +16,7 @@ namespace Synergia.Content.Projectiles.Boss.KingSlimeBuff
 		}
 		public override void AI() {
 			for(int i = 0; i < 4; i++) {
-				int d = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 86 + (int)Projectile.ai[1], Projectile.oldVelocity.X, Projectile.oldVelocity.Y, 50, default(Color), Projectile.scale * 1.2f);
+				int d = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 86 + (int)Projectile.ai[1], Projectile.oldVelocity.X, Projectile.oldVelocity.Y, 50, default, Projectile.scale * 1.2f);
 				Main.dust[d].noGravity = true;
 				Dust dust = Main.dust[d];
 				dust.scale *= 1.25f;
@@ -35,9 +33,9 @@ namespace Synergia.Content.Projectiles.Boss.KingSlimeBuff
 			}
 			Projectile.tileCollide = Projectile.ai[0] >= 0f;
 		}
-		public override void Kill(int timeLeft) {
+		public override void OnKill(int timeLeft) {
 			for(int a = 0; a < 36; a++) {
-				Dust dust = Dust.NewDustPerfect(Projectile.Center, 86 + (int)Projectile.ai[1], MathHelper.ToRadians(a * 10f).ToRotationVector2() * Projectile.velocity.Length(), 100, default(Color), 1.2f);
+				Dust dust = Dust.NewDustPerfect(Projectile.Center, 86 + (int)Projectile.ai[1], MathHelper.ToRadians(a * 10f).ToRotationVector2() * Projectile.velocity.Length(), 100, default, 1.2f);
 				dust.noGravity = true;
 				dust.scale *= 1.25f;
 				dust.velocity *= 0.5f;

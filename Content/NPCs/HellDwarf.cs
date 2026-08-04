@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
-using Bismuth.Content.Items.Materials;
-using Bismuth.Content.Items.Other;
+using Avalon.Items.Weapons.Ranged.Misc;
 using Synergia.Common.ModSystems;
 using Synergia.Common.ModSystems.WorldGens;
 using Synergia.Helpers;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.Creative;
 using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.Localization;
@@ -147,7 +145,7 @@ namespace Synergia.Content.NPCs {
             shop.Add(new Item(ItemType<Avalon.Items.Material.Shards.FireShard>()) { shopCustomPrice = Item.buyPrice(silver: 35) }, wOF);
             shop.Add(new Item(ItemID.LavaAbsorbantSponge) { shopCustomPrice = Item.buyPrice(platinum: 1, gold: 50) }, wOF);
             shop.Add(new Item(ItemID.PottedLavaPlantBulb) { shopCustomPrice = Item.buyPrice(gold: 4) }, wOF);
-            shop.Add(new Item(ItemType<Avalon.Items.Weapons.Ranged.PreHardmode.Boompipe.Boompipe>()) { shopCustomPrice = Item.buyPrice(gold: 16, silver: 90) }, plant);
+            shop.Add(new Item(ItemType<Boompipe>()) { shopCustomPrice = Item.buyPrice(gold: 16, silver: 90) }, plant);
             shop.Add(new Item(ItemID.LavaRocket) { shopCustomPrice = Item.buyPrice(silver: 30) }, plant);
             shop.Add(new Item(ItemType<ValhallaMod.Items.Placeable.Painting.HellUnderEarth>()) { shopCustomPrice = Item.buyPrice(platinum: 1) }, sinlord);
             shop.Register();

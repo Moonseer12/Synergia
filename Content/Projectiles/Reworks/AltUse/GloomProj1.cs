@@ -97,16 +97,15 @@ namespace Synergia.Content.Projectiles.Reworks.AltUse
             }
 
 
-            ParticleSystem.AddParticle(
-                new EnergyRevolverParticle(),
-                Projectile.Center,
-                Vector2.Zero,
-                new Color(80, 170, 255), 
-                0,
-                0.9f,
-                20
-            );
-
+            var p = VanillaParticles.RequestPrettySparkleParticle();
+		    p.ColorTint = new Color(80, 170, 255);
+		    p.Scale = new Vector2(5f, 1.1f);
+		    p.Rotation = Projectile.rotation * 0;
+		    p.LocalPosition = Projectile.Center;
+		    p.TimeToLive = 20;
+		    p.FadeInEnd = 2;
+		    p.FadeOutStart = 4;
+		    Main.ParticleSystem_World_OverPlayers.Add(p);
             Projectile.Kill();
         }
 

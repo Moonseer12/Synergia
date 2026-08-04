@@ -1,21 +1,13 @@
 ﻿using System;
 using Consolaria.Content.Items.Materials;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
-using Synergia.Common;
 using Synergia.Content.Items.Misc;
-using Synergia.Content.Projectiles.ActiveAccessoriesProjectiles;
 using Synergia.Content.Projectiles.RangedProjectiles;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ValhallaMod.DamageClasses;
-using ValhallaMod.Items.AI;
-using ValhallaMod.Items.Material.Bar;
-using static Terraria.ModLoader.ModContent;
 
 namespace Synergia.Content.Items.ActiveAccessories
 {
@@ -302,7 +294,7 @@ namespace Synergia.Content.Items.ActiveAccessories
             for (int i = 0; i < 12; i++)
             {
                 float speed = Main.rand.NextFloat(2f, 6f);
-                Vector2 velocity = new Vector2(
+                Vector2 velocity = new(
                     Main.rand.NextFloat(-1f, 1f),
                     Main.rand.NextFloat(-1f, 1f));
                 velocity.Normalize();
@@ -315,7 +307,7 @@ namespace Synergia.Content.Items.ActiveAccessories
 
             for (int i = 0; i < 6; i++)
             {
-                Vector2 velocity = new Vector2(
+                Vector2 velocity = new(
                     Main.rand.NextFloat(-4f, 4f),
                     Main.rand.NextFloat(-4f, 4f));
 
@@ -348,7 +340,7 @@ namespace Synergia.Content.Items.ActiveAccessories
             Projectile.Kill();
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             if (!hasExploded)
             {
@@ -399,7 +391,7 @@ namespace Synergia.Content.Items.ActiveAccessories
             Color drawColor = Projectile.GetAlpha(new Color(255, 140, 0));
             drawColor.A = (byte)(60 * spawnMultiplier);
 
-            Color glowColor = new Color(255, 100, 0);
+            Color glowColor = new(255, 100, 0);
 
             for (int i = 0; i < 4; i++)
             {

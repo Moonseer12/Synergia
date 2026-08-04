@@ -2,13 +2,12 @@
 using Avalon.Items.Material.OreChunks;
 using Avalon.Items.Material.Ores;
 using Avalon.Items.Material.Shards;
-using Avalon.Tiles;
+using Avalon.Tiles.Furniture.Crafting;
 using Bismuth.Content.Items.Materials;
 using Synergia.Content.Items.Misc;
 using Terraria;
 using Terraria.ID;
 using static Synergia.Common.ModSystems.RecipeSystem.RecipeGroups;
-using static Terraria.ModLoader.ModContent;
 using VenomSpike2 = Avalon.Items.Placeable.Tile.VenomSpike;
 
 namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
