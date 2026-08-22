@@ -24,7 +24,7 @@ namespace Synergia.Content.Quests {
         public override bool IsCompleted(Player player) => BaseIsCompleted(player);
         public override void OnChatButtonClicked(Player player) {
             BaseOnChatButtonClicked(player);
-            CheckItem(player, ref player.GetModPlayer<QuestBoolean>().LibrarianQuest3, ItemType<TimeContinuum>(), 1, 1, LocQuestKey("LibrarianQuest_Three", "QuestCompleted"), LocQuestKey("LibrariLibrarianQuest_ThreeanQuest_First", "QuestCompletedFalse"), ItemType<Unlighter>());
+            CheckItem(player, ref player.GetModPlayer<QuestBoolean>().LibrarianQuest3, ItemType<TimeContinuum>(), 1, 1, LocQuestKey("LibrarianQuest_Three", "QuestCompleted"), LocQuestKey("LibrarianQuest_Three", "QuestCompletedFalse"), ItemType<Unlighter>());
             if (Progress == 0) {
                 CompletedQuickSpawnItem(player, ItemID.GreaterManaPotion, 50);
             }

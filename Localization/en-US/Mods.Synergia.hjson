@@ -1773,6 +1773,7 @@ Projectiles: {
 	OcramSkull1.DisplayName: Ocram Skull1
 	HotEggProj.DisplayName: Hot Egg Proj
 	NaquadahDaggerProj.DisplayName: Naquadah Dagger Proj
+	ReincarnationAura.DisplayName: Reincarnation Aura
 }
 
 Buffs: {

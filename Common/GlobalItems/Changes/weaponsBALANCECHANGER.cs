@@ -27,6 +27,7 @@ using Synergia.Content.Projectiles.Reworks.Reworks2;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ValhallaMod.Items.Weapons.Blood;
 using ValhallaMod.Items.Weapons.Magic.Arcana;
 using ValhallaMod.Items.Weapons.Magic.Lanterns;
 using ValhallaMod.Items.Weapons.Magic.Music;
@@ -608,7 +609,31 @@ namespace Synergia.Common.GlobalItems.Changes
                 {
                     item.damage -= 10;
                 },
-
+                [ModContent.ItemType<MasterSword>()] = item =>
+                {
+                    item.useTime -= 18;
+                },
+                [ModContent.ItemType<NimbusStaff>()] = item =>
+                {
+                    item.damage += 3;
+                },
+                [ModContent.ItemType<ValhalliteSword>()] = item =>
+                {
+                    item.damage += 5;
+                },
+                [ModContent.ItemType<ValhalliteBlowpipe>()] = item =>
+                {
+                    item.damage += 4;
+                },
+                [ModContent.ItemType<ArcaneBarrage>()] = item =>
+                {
+                    item.useTime -= 23;
+                    item.useAnimation -= 10;
+                },
+                [ModContent.ItemType<AzraelsHeartstopper>()] = item =>
+                {
+                    item.damage += 13;
+                },
             };
         }
 

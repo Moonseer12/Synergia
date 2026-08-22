@@ -1,6 +1,6 @@
 ﻿using Avalon.Items.Armor.Hardmode;
-using Avalon.Items.Weapons.Magic.Hardmode.Boomlash;
-using Avalon.Items.Weapons.Magic.Hardmode.DevilsScythe;
+using Avalon.Items.Weapons.Magic.Wands;
+using Avalon.Items.Weapons.Magic.Tomes;
 using Bismuth.Content.Items.Other;
 using NewHorizons.Content.Items.Armor.AshenArmor;
 using NewHorizons.Content.Items.Weapons.Magic;

@@ -22,7 +22,7 @@ namespace Synergia.Content.GlobalProjectiles
 			projectile.aiStyle = -1;
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.DamageType = DamageClass.Ranged;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = true;
 			projectile.penetrate = -1;
 			projectile.usesLocalNPCImmunity = true;

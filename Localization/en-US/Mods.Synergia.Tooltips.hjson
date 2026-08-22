@@ -362,4 +362,10 @@ Weapons: {
 	WoodenBoomerangInfo: Shoots 2 boomerangs instead of 1.
 	TrimarangInfo: Shoots 2 high-velocity boomerangs instead of 1.
 	JadePickaxe: Can mine Adamantite, Titanium, and Troxinium
+	FaithTreatise:
+		'''
+		If you die within 5 seconds of using an item, 
+		you will be resurrected with a damage bonus for 5 seconds
+		Set favorite for aura to be enabled(only visual)
+		'''
 }

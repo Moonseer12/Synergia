@@ -30,7 +30,7 @@ namespace Synergia.Content.NPCs.Boss.SinlordWyrm
             NPC.HitSound = new SoundStyle("Synergia/Assets/Sounds/CragwormHit")
             {
                 MaxInstances = 15,
-                Volume = 0.6f // we can use these for volume isnt it?
+                Volume = 0.4f // we can use these for volume isnt it?
             };
             NPC.knockBackResist = 0f;
 			NPC.scale = 1.3f;

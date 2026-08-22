@@ -1,9 +1,12 @@
 ﻿using Avalon.Items.Accessories.Hardmode;
 using Avalon.Items.Material.TomeMats;
 using Bismuth.Content.Items.Accessories;
+using Bismuth.Content.Items.Other;
 using NewHorizons.Content.Items.Accessories;
+using Synergia.Common.GlobalPlayer;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using ValhallaMod.Items.Tools;
 using static Synergia.Helpers.ItemHelper;
@@ -40,11 +43,21 @@ namespace Synergia.Common.GlobalItems.Set {
             BaseAccTooltips(item, tooltips, ItemType<ScrollOfChunin>(), 2, AddAttackSpeed(DamageClassName("throwing"), 8)  + "\n" + string.Format(AddBaseTooltips("SynergiaThrowing"), 60, 30), true);
             BaseAccTooltips(item, tooltips, ItemType<ScrollOfJonin>(),  2, AddAttackSpeed(DamageClassName("throwing"), 12) + "\n" + string.Format(AddBaseTooltips("SynergiaThrowing"), 30, 60), true);
 
+            if (item.type == ItemType<FaithTreatise>()) {
+                for (int i = item.favorited ? 6 : 4; i >= (item.favorited ? 4 : 2); i--) {
+                    tooltips[i].Hide();
+                }
+
+                BaseAddTooltips(item, tooltips, ItemType<FaithTreatise>(), "info", "FaithTreatise");
+            }
             // когда ни будь я это удалю
             if (item.type == ItemType<CarbonSteel>()) {
                 tooltips.RemoveAll(line => line.Mod == "Terraria" && line.Name == "Tooltip0");
             }
 
+        }
+        public override void UpdateInventory(Item item, Player player) {
+            if (item.type == ItemType<FaithTreatise>()) { player.GetModPlayer<BookPlayer>().onlyVisual = item.favorited; }
         }
     }
 }

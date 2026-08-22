@@ -564,7 +564,7 @@ public class GenerationVillageInHell : BaseWorldGens {
         WorldGen.PlaceObject(pos + 146, SynergiaGenVars.HellVillageY - 72, lamp,                    false, 0 );
         WorldGen.PlaceObject(pos + 149, SynergiaGenVars.HellVillageY - 72, TileID.Tables,           false, 13);
         WorldGen.PlaceObject(pos + 152, SynergiaGenVars.HellVillageY - 72, book,                    false, 0 );
-        WorldGen.PlaceObject(pos + 155, SynergiaGenVars.HellVillageY - 72, Anvil,                   false, 0 );
+        //WorldGen.PlaceObject(pos + 155, SynergiaGenVars.HellVillageY - 72, Anvil,                   false, 0 );
         WorldGen.PlaceObject(pos + 152, SynergiaGenVars.HellVillageY - 76, candle,                  false, 0 );
         WorldGen.PlaceObject(pos + 161, SynergiaGenVars.HellVillageY - 76, Lamp,                    false, 0 );
         WorldGen.PlaceObject(pos + 163, SynergiaGenVars.HellVillageY - 76, Lamp,                    false, 0 );

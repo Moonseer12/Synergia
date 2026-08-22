@@ -50,15 +50,15 @@ namespace Synergia.Common.ModSystems.RecipeSystem.ChangesRecipe.AvalonsChanges {
             CreateGreaterPotionBelt();
             CreateThunderbar();
             CreateTimeFragment();
-            CreateValhalliteAnvil();
+            //CreateValhalliteAnvil();
         }
-        static void CreateValhalliteAnvil()
-        {
-            Recipe recipe = Recipe.Create(ItemType<ValhallaMod.Items.Placeable.DwarvenAnvil>(), 1);
-            recipe.AddIngredient(ItemType<ValhalliteBar>(), 16);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-        }
+        //static void CreateValhalliteAnvil()
+        //{
+        //    Recipe recipe = Recipe.Create(ItemType<ValhallaMod.Items.Placeable.DwarvenAnvil>(), 1);
+        //    recipe.AddIngredient(ItemType<ValhalliteBar>(), 16);
+        //    recipe.AddTile(TileID.Anvils);
+        //    recipe.Register();
+        //}
         static void CreateGreaterPotionBelt()
         {
             Recipe recipe = Recipe.Create(ItemType<GreaterPotionBelt>());

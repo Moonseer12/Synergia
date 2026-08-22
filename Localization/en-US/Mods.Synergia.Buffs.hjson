@@ -75,3 +75,8 @@ HotEggBuff: {
 	DisplayName: Hot Egg
 	Description: OOOf this egg really hot...
 }
+
+ReincarnationBuff: {
+	DisplayName: Reincarnation Buff
+	Description: Increase damage dealt by 20%
+}

@@ -43,7 +43,7 @@ public class ScorcherRequiem : ModItem
         Item.channel = true;
 
         Item.rare = ModContent.RarityType<CoreburnedRarity>();
-        Item.value = Item.sellPrice(90, 4);
+        Item.value = Item.sellPrice(0, 14);
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) { }
