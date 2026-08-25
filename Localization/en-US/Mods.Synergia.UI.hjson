@@ -39,7 +39,7 @@ SummonUI: {
 }
 
 BookAbilityUI: {
-	Active: Active
-	NotActive: Not Active
-	Slot: Not slot available
+	Active: "[c/00FF00:Active]"
+	NotActive: "[c/808080:Not Active]"
+	Slot: "[c/FF0000:Not slot available]"
 }

@@ -1,10 +1,13 @@
-﻿using Avalon.Items.Tools.Hardmode;
+﻿using Avalon.Items.Tomes.PreHardmode;
+using Avalon.Items.Tomes.Superhardmode;
+using Avalon.Items.Tools.Hardmode;
 using Bismuth.Content.Items.Other;
 using Bismuth.Content.Items.Weapons.Throwing;
 using Consolaria.Content.Items.Weapons.Melee;
 using NewHorizons.Content.Items.Weapons.Ranged;
 using NewHorizons.Content.Items.Weapons.Throwing;
 using Starforgedclassic.Content.Weapons.Solarang;
+using Synergia.Common.ModSystems.Hooks.Ons.EditAcc;
 using Synergia.Content.Items.Weapons.Cogworm;
 using Synergia.Content.Items.Weapons.Throwing;
 using System.Collections.Generic;
@@ -28,6 +31,8 @@ namespace Synergia.Lists {
         public static HashSet<int> IsComboWeapons { get; private set; } = [Trimarang, Flamarang, Bone, Shroomerang, ThornChakram, Anchor, WoodenBoomerang, Snowball, FruitcakeChakram, ItemType<OmegaDisc>(), ItemType<Flarion>(), ItemType<EverwoodJavelin>(), ItemType<Pulsar>(), ItemType<SunJavelin>(), ItemType<NaturalSelection>(), ItemType<AlbinoMandible>(), ItemType<StalloyScrew>(), ItemType<Airflow>(), ItemType<TitaniumWarhammer>(), ItemType<AdamantiteDagger>(), ItemType<TeethBreaker>(), ItemType<CactusStar>(), ItemType<AzraelsHeartstopper>(), ItemType<NewHorizons.Content.Items.Weapons.Throwing.ChlorophyteJavelin>(), ItemType<NewHorizons.Content.Items.Weapons.Throwing.NightGlaive>(), ItemType<NewHorizons.Content.Items.Weapons.Throwing.MythrilJavelin>(), ItemType<CrystalDagger>(), ItemType<CrimiteGlaive>(), ItemType<SnowGlaive>(), ItemType<OrichalcumKama>(), ItemType<Carnwennan>(), ItemType<Aeglos>(), ItemType<Lancea>(), ItemType<Garlic>(), ItemType<ScarletGungnir>(), ItemType<BlazingSaws>(), ItemType<NanoStar>(), ItemType<CrystalGrenade>()];
         public static HashSet<int> VanillaGrapplingHooks { get; private set; } = [AmethystHook, Hook, AmberHook, AncientHallowedHood, AntiGravityHook, BatHook, CandyCaneHook, ChristmasHook, DiamondHook, DualHook, EmeraldHook, FishHook, GrapplingHook, HotlineFishingHook, IlluminantHook, LavaFishingHook, LunarHook, QueenSlimeHook, RubyHook, SapphireHook, SlimeHook, SpookyHook, SquirrelHook, StaticHook, TendonHook, ThornHook, TopazHook, WormHook];
         public static HashSet<int> BismuthEmblem { get; private set; } = [ItemType<AssasinsEngraving>(), ItemType<RangersEngraving>(), ItemType<ThrowersEngraving>(), ItemType<WarriorsEngraving>(), ItemType<WizardsEngraving>()];
+        public static List<int> AvaBook { get; private set; } = [ItemType<AFlowerlessPlant>(), ItemType<Dominance>()];
+
         //public static List<int> DisableItem { get; private set; } = [ItemType<AdamantiteHat>(), ItemType<BronzeMask>(), ItemType<CobaltHeadgear>(), ItemType<MythrilHeadgear>(), ItemType<OrichalcumHat>(), ItemType<PalladiumHat>(), ItemType<TitaniumHat>(), ItemType<HallowedFaceShield>(), ItemType<HallowedHeadpiece>()];                                                       
     }
 }

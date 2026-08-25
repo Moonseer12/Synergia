@@ -12,6 +12,7 @@ namespace Synergia.Common.ModSystems.Hooks.Ons {
 
         public abstract Type HookType { get; }
         public abstract int HookItem { get; }
+
         public abstract void EditAcc(Orig_UpdateAccessory orig, ModItem item, Player player, bool hideVisual);
         public override void Load() {
             MethodInfo info = HookType.GetMethod("UpdateAccessory", BindingFlags.Public | BindingFlags.Instance);

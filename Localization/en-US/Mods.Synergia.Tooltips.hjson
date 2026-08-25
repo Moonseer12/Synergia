@@ -223,6 +223,9 @@ Accessories: {
 				'''
 		}
 	}
+
+	AbilityDeffalutKey: "[c/808080:Unbound]"
+	AbilityText: Press <{0}> for active ui
 }
 
 Armors: {

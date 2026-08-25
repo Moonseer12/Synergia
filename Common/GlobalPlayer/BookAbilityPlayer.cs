@@ -80,8 +80,10 @@ public class BookAbilityPlayer : ModPlayer {
                 }
             }
         }
-        if (!ActiveSpell.CanActive(GetModedAccItemInSlot(Player)[_index].type)) {
-            for (int i = 0; i < 4; i++) { UsesSlot[i] = false; }
+        if (ActiveSpell != null) {
+            if (!ActiveSpell.CanActive(GetModedAccItemInSlot(Player)[_index].type)) {
+                for (int i = 0; i < 4; i++) { UsesSlot[i] = false; }
+            }
         }
         for (int i = 0; i < UsesSlot.Length; i++) {
             if (UsesSlot[i] == true) {
