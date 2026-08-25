@@ -13,6 +13,7 @@ namespace Synergia.Reassures {
             }
         }
         public static Texture2D RegisterTextureElement(string nameElement) => Request<Texture2D>(nameElement, AssetRequestMode.ImmediateLoad).Value;
+        public static Asset<Texture2D>RegisterTextureAsset(string nameElement) => Request<Texture2D>(nameElement, AssetRequestMode.ImmediateLoad);
 
         public class RTextures : ModSystem {
             public static Asset<Texture2D>[] FeatherLeft { get; private set; } = new Asset<Texture2D>[3];
@@ -20,6 +21,7 @@ namespace Synergia.Reassures {
             public static Asset<Texture2D>[] Present { get; private set; } = new Asset<Texture2D>[7];
             public static Asset<Texture2D>[] Location { get; private set; } = new Asset<Texture2D>[4]; // 5
             public static Asset<Texture2D>[] GlowLocation { get; private set; } = new Asset<Texture2D>[4];
+            public static Asset<Texture2D>[] AbilityBookSlots { get; private set; } = new Asset<Texture2D>[5];
             public static Dictionary<string, (Texture2D, Texture2D, Texture2D, Texture2D)> SlotImgName { get; private set; } = [];
 
             public override void Load() {
@@ -28,6 +30,12 @@ namespace Synergia.Reassures {
                 RegisterTextureElement(Present, 7, "BGPresent_");
                 RegisterTextureElement(Location, 4, "TeleportationLocation_", true);
                 RegisterTextureElement(GlowLocation, 4, "TeleportationLocation_glow_", true);
+
+                AbilityBookSlots[0] = RegisterTextureAsset("Synergia/Assets/UIs/AbilityBookSlot/Book");
+                AbilityBookSlots[1] = RegisterTextureAsset("Synergia/Assets/UIs/AbilityBookSlot/BookGlow");
+                AbilityBookSlots[2] = RegisterTextureAsset("Synergia/Assets/UIs/AbilityBookSlot/Lock");
+                AbilityBookSlots[3] = RegisterTextureAsset("Synergia/Assets/UIs/AbilityBookSlot/LockGlow");
+                AbilityBookSlots[4] = RegisterTextureAsset("Synergia/Assets/UIs/AbilityBookSlot/Chain");
 
                 for (int i = 0; i < Manager.Slots.Count; i++) {
                     SlotImgName.TryAdd(Manager.Slots[i].Name, (RegisterTextureElement(Manager.Slots[i].TexturePatch), RegisterTextureElement(Manager.Slots[i].TexturePatch + Manager.Slots[i].Hower), RegisterTextureElement(Manager.Slots[i].TexturePatch + Manager.Slots[i].Favorite), RegisterTextureElement(Manager.Slots[i].TexturePatch + Manager.Slots[i].Hower + Manager.Slots[i].Favorite)));
