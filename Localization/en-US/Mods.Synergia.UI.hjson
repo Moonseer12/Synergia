@@ -37,3 +37,9 @@ SummonUI: {
 	Sentry: Active sentries {0} of {1}
 	Aura: Active auras {0} of {1}
 }
+
+BookAbilityUI: {
+	Active: Active
+	NotActive: Not Active
+	Slot: Not slot available
+}

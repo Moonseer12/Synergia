@@ -83,21 +83,15 @@ public class AbilityUI(Item item, Player player, int index) : UIState {
             player.mouseInterface = true;
 
             string text = "";
-            if (modPlayer.UsesSlot[index]) { text = "активно"; }
-            else { text = "Можно активировать"; }
-
-            if (modPlayer.ActiveSlotCount == 2 && !modPlayer.UsesSlot[index]) {
-                text = "нету пустых слотов";
-            }
+            if (modPlayer.UsesSlot[index]) { text = LocUIKey("BookAbilityUI", "Active");  }
+            else { text = LocUIKey("BookAbilityUI", "NotActive"); }
+            if (modPlayer.ActiveSlotCount == 2 && !modPlayer.UsesSlot[index]) { text = LocUIKey("BookAbilityUI", "Slot"); }
 
             Main.instance.MouseText(_activeSpell.SlotDescription(index) + "\n" + text);
+
             if (UIUtils.LeftClick()) {
-                if (modPlayer.ActiveSlotCount < 2) {
-                    modPlayer.UsesSlot[index] = !modPlayer.UsesSlot[index];
-                }
-                else {
-                    modPlayer.UsesSlot[index] = false;
-                }
+                if (modPlayer.ActiveSlotCount < 2) { modPlayer.UsesSlot[index] = !modPlayer.UsesSlot[index]; }
+                else { modPlayer.UsesSlot[index] = false; }
             }
         }
         else { _hoverSlot[index] = false; };
