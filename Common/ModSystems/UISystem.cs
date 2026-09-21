@@ -19,10 +19,12 @@ public class UISystem : ModSystem {
         AddLayer(layers, inventoryIndex, "Synergia: Summon UI", () => { if (Main.myPlayer >= 0) { Main.LocalPlayer.GetModPlayer<SummonUI>().DrawSummonUI(spriteBatch); } return true; });
         AddLayer(layers, inventoryIndex, "Synergia: Dwarf Chat UI", () => { mod.DwarfChatInterface.Draw(Main.spriteBatch, new GameTime()); return true; });
         AddLayer(layers, inventoryIndex, "Synergia: Luceat UI", () => { mod.LuceatInterface.Draw(Main.spriteBatch, new GameTime()); return true; });
+        layers.Insert(inventoryIndex, new LegacyGameInterfaceLayer("Synergia: Book Skill UI", () => { mod.AbilityUI.Draw(Main.spriteBatch, new()); return true; }, InterfaceScaleType.UI));
     }
     public override void UpdateUI(GameTime gameTime) {
         mod.DwarfReforgeInterface?.Update(gameTime);
         mod.DwarfChatInterface?.Update(gameTime);
         mod.LuceatInterface?.Update(gameTime);
+        mod.AbilityUI?.Update(gameTime);
     }
 }

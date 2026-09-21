@@ -1892,6 +1892,7 @@ Buffs: {
 Keybinds: {
 	ToggleAuraMode.DisplayName: Toggle Aura Mode
 	ArmorSetBonusActivate.DisplayName: Armor Set Bonus Activate
+	UI.DisplayName: U I
 }
 
 SinlordSummon: Use Hellworm scale in the underworld

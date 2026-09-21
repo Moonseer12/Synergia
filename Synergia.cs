@@ -19,6 +19,10 @@ namespace Synergia
         public UserInterface DwarfReforgeInterface { get; private set; }
         public UserInterface DwarfChatInterface { get; private set; }
         public UserInterface LuceatInterface { get; private set; }
+        public UserInterface AbilityUI { get; private set; } = null;
+
+        public static ModKeybind SpellUIKey = null;
+
         public static string ModName { get; private set; } = nameof(Synergia);
 
         public bool needUpdateFont = false;
@@ -36,8 +40,12 @@ namespace Synergia
             DwarfChatInterface = new UserInterface();
             DwarfReforgeInterface = new UserInterface();
             LuceatInterface = new UserInterface();
+            AbilityUI = new();
             #endregion
             Instance = this;
+
+            SpellUIKey = KeybindLoader.RegisterKeybind(this, "UI", Microsoft.Xna.Framework.Input.Keys.B);
+
             LoadMod();
             //Fixes a post setup crash caused by TRAE Project
             On_ItemSorting.SetupWhiteLists += (orig) => {

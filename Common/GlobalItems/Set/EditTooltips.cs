@@ -6,7 +6,6 @@ using NewHorizons.Content.Items.Accessories;
 using Synergia.Common.GlobalPlayer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using ValhallaMod.Items.Tools;
 using static Synergia.Helpers.ItemHelper;
@@ -54,7 +53,15 @@ namespace Synergia.Common.GlobalItems.Set {
             if (item.type == ItemType<CarbonSteel>()) {
                 tooltips.RemoveAll(line => line.Mod == "Terraria" && line.Name == "Tooltip0");
             }
+            if (AvaBook.Contains(item.type)) {
+                for (int i = tooltips.Count - 1; tooltips[i].Name != "TomeGradeTooltip" && tooltips[i].Name != "TomeTooltip"; i--) {
+                    if (tooltips[i].Mod != "InternalNameMod") { tooltips[i].Hide(); }
+                }
 
+                string button = Synergia.SpellUIKey.GetAssignedKeys().Count > 0 ? Synergia.SpellUIKey.GetAssignedKeys()[0] : ItemTooltip(ACC, "AbilityDeffalutKey");
+
+                tooltips.Add(new(Mod, "ActiveUI", string.Format(ItemTooltip(ACC, "AbilityText"), button)));
+            }
         }
         public override void UpdateInventory(Item item, Player player) {
             if (item.type == ItemType<FaithTreatise>()) { player.GetModPlayer<BookPlayer>().onlyVisual = item.favorited; }
