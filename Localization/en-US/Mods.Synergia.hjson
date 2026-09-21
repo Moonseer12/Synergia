@@ -1302,6 +1302,11 @@ Items: {
 		DisplayName: Naquadah Dagger
 		Tooltip: ""
 	}
+
+	GoldBearer: {
+		DisplayName: Gold Bearer
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1774,6 +1779,7 @@ Projectiles: {
 	HotEggProj.DisplayName: Hot Egg Proj
 	NaquadahDaggerProj.DisplayName: Naquadah Dagger Proj
 	ReincarnationAura.DisplayName: Reincarnation Aura
+	GoldBearerProj.DisplayName: Gold Bearer Proj
 }
 
 Buffs: {

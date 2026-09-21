@@ -23,41 +23,45 @@ namespace Synergia.Content.NPCs.Miniboss
 {
     [AutoloadBossHead]
     public class Cruor : ModNPC
-	{
+    {
         private bool isSpawning = true;
         private float spawnTimer = 0f;
         //Just change these
-        public override void SetStaticDefaults() {
-			Main.npcFrameCount[Type] = 8;
-			NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers { Velocity = 1f };
-			NPCID.Sets.NPCBestiaryDrawOffset.Add(base.Type, value);
-		}
-		//and the stats here
-		public override void SetDefaults() {
-			NPC.width = 40;
-			NPC.height = 60;
-			NPC.damage = 0; //no contact damage because that would be annoying
-			NPC.defense = 30;
-			NPC.lifeMax = 36000;
-			NPC.knockBackResist = 0f;
-			NPC.noGravity = true;
-			NPC.noTileCollide = true;
-			NPC.netAlways = true;
-			NPC.aiStyle = -1;
-			NPC.HitSound = SoundID.DD2_SkeletonHurt;
-			NPC.DeathSound = SoundID.DD2_SkeletonDeath;
-			NPC.value = Item.sellPrice(0, 7, 9  , 0);
+        public override void SetStaticDefaults()
+        {
+            Main.npcFrameCount[Type] = 8;
+            NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers { Velocity = 1f };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(base.Type, value);
+        }
+        //and the stats here
+        public override void SetDefaults()
+        {
+            NPC.width = 40;
+            NPC.height = 60;
+            NPC.damage = 0; //no contact damage because that would be annoying
+            NPC.defense = 30;
+            NPC.lifeMax = 36000;
+            NPC.knockBackResist = 0f;
+            NPC.noGravity = true;
+            NPC.noTileCollide = true;
+            NPC.netAlways = true;
+            NPC.aiStyle = -1;
+            NPC.HitSound = SoundID.DD2_SkeletonHurt;
+            NPC.DeathSound = SoundID.DD2_SkeletonDeath;
+            NPC.value = Item.sellPrice(0, 7, 9, 0);
             NPC.alpha = 255;
         }
-		//and the bestiary shit here
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) => bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheDungeon,
-			new FlavorTextBestiaryInfoElement("Soulless creature.")
-		});
-        private void SpawnAnimation(){
+        //and the bestiary shit here
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) => bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+            BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheDungeon,
+            new FlavorTextBestiaryInfoElement("Soulless creature.")
+        });
+        private void SpawnAnimation()
+        {
             spawnTimer++;
 
-            if (spawnTimer < 60){
+            if (spawnTimer < 60)
+            {
                 NPC.alpha = 255 - (int)(spawnTimer / 60f * 255);
                 NPC.scale = 0.5f + (spawnTimer / 60f) * 0.5f;
 
@@ -73,7 +77,8 @@ namespace Synergia.Content.NPCs.Miniboss
 
                 if (spawnTimer == 30) SoundEngine.PlaySound(SoundID.Item8, NPC.Center);
             }
-            else{
+            else
+            {
                 NPC.alpha = 0;
                 NPC.scale = 1f;
                 isSpawning = false;
@@ -84,18 +89,20 @@ namespace Synergia.Content.NPCs.Miniboss
                 SoundEngine.PlaySound(SoundID.Item14, NPC.Center);
             }
         }
-        public override void FindFrame(int frameHeight) {
-			NPC.spriteDirection = NPC.direction;
-			if(++NPC.frameCounter >= 8) {
-				NPC.frameCounter = 0;
-				NPC.frame.Y += frameHeight;
-				int half = frameHeight * Main.npcFrameCount[NPC.type] / 2;
-				if(NPC.frame.Y >= frameHeight * Main.npcFrameCount[NPC.type] / (float)(NPC.localAI[0] > 0f ? 1 : 2)) NPC.frame.Y -= half;
-				if(NPC.localAI[0] > 0f && NPC.frame.Y < half) NPC.frame.Y += half;
-			}
-			if(NPC.ai[0] == 3f && NPC.localAI[3] > 0f) NPC.rotation = Vector2.Normalize(Vector2.Lerp((NPC.velocity.X / 45f).ToRotationVector2(), (NPC.ai[2] + (NPC.spriteDirection - 1) * MathHelper.PiOver2).ToRotationVector2(), NPC.localAI[3])).ToRotation();
-			else NPC.rotation = NPC.velocity.X / 45f;
-		}
+        public override void FindFrame(int frameHeight)
+        {
+            NPC.spriteDirection = NPC.direction;
+            if (++NPC.frameCounter >= 8)
+            {
+                NPC.frameCounter = 0;
+                NPC.frame.Y += frameHeight;
+                int half = frameHeight * Main.npcFrameCount[NPC.type] / 2;
+                if (NPC.frame.Y >= frameHeight * Main.npcFrameCount[NPC.type] / (float)(NPC.localAI[0] > 0f ? 1 : 2)) NPC.frame.Y -= half;
+                if (NPC.localAI[0] > 0f && NPC.frame.Y < half) NPC.frame.Y += half;
+            }
+            if (NPC.ai[0] == 3f && NPC.localAI[3] > 0f) NPC.rotation = Vector2.Normalize(Vector2.Lerp((NPC.velocity.X / 45f).ToRotationVector2(), (NPC.ai[2] + (NPC.spriteDirection - 1) * MathHelper.PiOver2).ToRotationVector2(), NPC.localAI[3])).ToRotation();
+            else NPC.rotation = NPC.velocity.X / 45f;
+        }
         public override void AI()
         {
             if (isSpawning)
@@ -107,7 +114,8 @@ namespace Synergia.Content.NPCs.Miniboss
             Player target = NPC.target > -1 ? Main.player[NPC.target] : null;
 
             // FIX for checking for players
-            if (target == null || !target.active || target.dead || target.Distance(NPC.Center) > 1000f){
+            if (target == null || !target.active || target.dead || target.Distance(NPC.Center) > 1000f)
+            {
                 NPC.TargetClosest();
                 target = NPC.target > -1 ? Main.player[NPC.target] : null;
                 if (target == null || !target.active || target.dead || target.Distance(NPC.Center) > 1000f)
@@ -116,12 +124,13 @@ namespace Synergia.Content.NPCs.Miniboss
                         NPC.active = false;
                     else
                         NPC.alpha += 17;
-                    return; 
+                    return;
                 }
             }
 
             // NUll checking
-            if (target != null){
+            if (target != null)
+            {
                 switch (NPC.ai[0])
                 {
                     case 0:
@@ -252,21 +261,23 @@ namespace Synergia.Content.NPCs.Miniboss
                 if (NPC.localAI[1] > 0f) NPC.localAI[1]--;
             }
         }
-        public override bool PreDraw(SpriteBatch sprite, Vector2 screenPos, Color drawColor) {
-			Texture2D texture = TextureAssets.Npc[NPC.type].Value;
-			Vector2 origin = NPC.frame.Size() / 2f;
-			Color color = NPC.GetNPCColorTintedByBuffs(NPC.GetAlpha(drawColor));
-			Vector2 offset = Vector2.Zero;
-			SpriteEffects spriteEffects = NPC.spriteDirection < 0 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-			for(int i = 0; i < 4; i++) sprite.Draw(texture, NPC.Center + Vector2.UnitX.RotatedBy(MathHelper.PiOver2 * i) * (3f + NPC.localAI[2] + (float)Math.Sin(Main.GlobalTimeWrappedHourly * MathHelper.TwoPi)) * NPC.Opacity - screenPos, NPC.frame, new Color(100, 0, 0, 0) * NPC.Opacity, NPC.rotation, origin, NPC.scale, spriteEffects, 0f);
-			sprite.Draw(texture, NPC.Center - screenPos, NPC.frame, color, NPC.rotation, origin, NPC.scale, spriteEffects, 0f);
-			texture = ModContent.Request<Texture2D>(Texture + "_Glow").Value;
-			sprite.Draw(texture, NPC.Center - screenPos, NPC.frame, NPC.GetNPCColorTintedByBuffs(NPC.GetAlpha(Color.White * NPC.Opacity)), NPC.rotation, origin, NPC.scale, spriteEffects, 0f);
-			texture = ModContent.Request<Texture2D>("Synergia/Assets/Textures/Shortsword").Value;
-			if(NPC.localAI[1] > 0f) sprite.Draw(texture, NPC.Center - new Vector2(7f * -NPC.spriteDirection, 18f).RotatedBy(NPC.rotation) - screenPos, null, new Color(NPC.ai[0] == 2f ? 255 : 200, NPC.ai[0] == 2f ? 55 : 0, NPC.ai[0] == 2f ? 75 : 0, 0) * (float)Math.Sin(NPC.localAI[1] * 0.1f * MathHelper.Pi), NPC.rotation, texture.Size() / 2f, NPC.scale * new Vector2(1f - NPC.localAI[1] * 0.1f, 0.8f), spriteEffects, 0f);
-			return false;
-		}
-        public override void ModifyNPCLoot(NPCLoot npcLoot){
+        public override bool PreDraw(SpriteBatch sprite, Vector2 screenPos, Color drawColor)
+        {
+            Texture2D texture = TextureAssets.Npc[NPC.type].Value;
+            Vector2 origin = NPC.frame.Size() / 2f;
+            Color color = NPC.GetNPCColorTintedByBuffs(NPC.GetAlpha(drawColor));
+            Vector2 offset = Vector2.Zero;
+            SpriteEffects spriteEffects = NPC.spriteDirection < 0 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            for (int i = 0; i < 4; i++) sprite.Draw(texture, NPC.Center + Vector2.UnitX.RotatedBy(MathHelper.PiOver2 * i) * (3f + NPC.localAI[2] + (float)Math.Sin(Main.GlobalTimeWrappedHourly * MathHelper.TwoPi)) * NPC.Opacity - screenPos, NPC.frame, new Color(100, 0, 0, 0) * NPC.Opacity, NPC.rotation, origin, NPC.scale, spriteEffects, 0f);
+            sprite.Draw(texture, NPC.Center - screenPos, NPC.frame, color, NPC.rotation, origin, NPC.scale, spriteEffects, 0f);
+            texture = ModContent.Request<Texture2D>(Texture + "_Glow").Value;
+            sprite.Draw(texture, NPC.Center - screenPos, NPC.frame, NPC.GetNPCColorTintedByBuffs(NPC.GetAlpha(Color.White * NPC.Opacity)), NPC.rotation, origin, NPC.scale, spriteEffects, 0f);
+            texture = ModContent.Request<Texture2D>("Synergia/Assets/Textures/Shortsword").Value;
+            if (NPC.localAI[1] > 0f) sprite.Draw(texture, NPC.Center - new Vector2(7f * -NPC.spriteDirection, 18f).RotatedBy(NPC.rotation) - screenPos, null, new Color(NPC.ai[0] == 2f ? 255 : 200, NPC.ai[0] == 2f ? 55 : 0, NPC.ai[0] == 2f ? 75 : 0, 0) * (float)Math.Sin(NPC.localAI[1] * 0.1f * MathHelper.Pi), NPC.rotation, texture.Size() / 2f, NPC.scale * new Vector2(1f - NPC.localAI[1] * 0.1f, 0.8f), spriteEffects, 0f);
+            return false;
+        }
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
             npcLoot.Add(ItemDropRule.OneFromOptions(1, 3, 5,
                 ItemID.Ectoplasm,
                 ModContent.ItemType<ThunderShard>()

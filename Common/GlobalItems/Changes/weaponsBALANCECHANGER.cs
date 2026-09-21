@@ -634,6 +634,17 @@ namespace Synergia.Common.GlobalItems.Changes
                 {
                     item.damage += 13;
                 },
+                [ModContent.ItemType<BlueSlice>()] = item =>
+                {
+                    item.damage -= 9;
+                },
+                [ModContent.ItemType<VertexOfExcalibur>()] = item =>
+                {
+                    item.damage -= 18;
+                    item.useTime += 12;
+                    item.useAnimation += 12;
+                },
+
             };
         }
 

@@ -103,7 +103,7 @@ HellDwarf: {
 }
 
 HunterQuest_Frist: {
-	QuestName: The backwoods curse
+	QuestName: The Backwoods Curse
 	QuestDescription: Give Lothor's Skull to the hunter. The horror that this druid brought in these lands cannot be described in words, even the hottest places are cursed by his presence.
 	QuestStage: Collect the Lothor Skull
 	QuestProgress0: Thanks for the Lothor Soul!

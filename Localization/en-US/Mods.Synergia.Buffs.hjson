@@ -80,3 +80,8 @@ ReincarnationBuff: {
 	DisplayName: Reincarnation Buff
 	Description: Increase damage dealt by 20%
 }
+
+GoldBearerBuff: {
+	DisplayName: Gold Bearer Buff
+	Description: Mods.Synergia.Buffs.GoldBearerBuff.Description
+}
